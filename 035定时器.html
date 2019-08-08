@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器-弹框的出现</title>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('pop');
+            var oBt = document.getElementById('close');
+            // setTimeout(showpop,2000);
+            // function showpop() {
+            //     oDiv.style.display = 'block';
+            // }
+            // 显示弹窗
+           var timer1 =  setTimeout(function () {
+                oDiv.style.display = 'block';
+            },2000);
+
+           // 关闭定时器
+           //  clearTimeout(timer1);
+            // 关闭弹窗
+            oBt.onclick = function () {
+                oDiv.style.display = 'none';
+            };
+
+            // 反复执行定时器
+            // var timer2 = setInterval(function () {
+            //     console.log("hello");
+            // },2000);
+            // // 关闭定时器
+            // clearInterval(timer2);
+        }
+
+    </script>
+    <style>
+        .pop_con{
+            background-color: #000;
+            display: none;
+
+        }
+        .pop {
+            width: 400px;
+            height: 300px;
+            background-color: #fff;
+            border: 1px solid #000;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -150px;
+            z-index: 9999; /* 层级关系 */
+        }
+        .mask {/* 灰色背景 */
+            position: fixed;  /* 固定定位 */
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            left: 0;
+            top: 0;
+            opacity: 0.3; /* 透明度 */
+            filter: alpha(opacity=30); /* 兼容IE */
+            z-index: 9990;
+        }
+        .button {
+            width: 70px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -35px;
+            margin-top: 75px;
+            background-color: #00a0e9;
+        }
+        h3,p,h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>首页</h1>
+<p>正文内容</p>
+
+<div class="pop_con" id="pop">
+    <div class="pop">
+        <h3>弹框信息!</h3>
+        <p>弹框正文内容.</p>
+        <p>弹框正文内容.</p>
+        <p>弹框正文内容.</p>
+        <p>弹框正文内容.</p>
+        <input type="button" id="close" value="关闭弹窗" class="button">
+    </div>
+    <div class="mask"></div>
+</div>
+
+
+</body>
+</html>

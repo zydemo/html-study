@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>039-闭包</title>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+   <script>
+       // 闭包：函数嵌套函数，内部函数可以引用外部函数的参数和变量，参数和变量不会被垃圾回收机制收回
+        function aa(b) {
+            var a = 12;
+            function bb() {
+                console.log(a); // 12
+                console.log(b); // 55
+            }
+            return bb;
+        }
+        var cc= aa(55);
+        cc();
+        // 改写成封闭函数形式
+        var cc = (function aa(b) {
+            var a = 15;
+            function bb() {
+                console.log(a); // 15
+                console.log(b); // 88
+            }
+            return bb;
+        })(88);
+        cc();
+
+
+    </script>
+</html>

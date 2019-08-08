@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器-动画</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 200px;
+            background-color: #ff6600;
+            position: fixed;
+            left: 20px;
+            top: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('box');
+            var beginbTn = document.getElementById('begin');
+            var bTn = document.getElementById('button');
+            var left = 20;
+            beginbTn.onclick = function () {
+                var timer1 = setInterval(function () {
+                left += 5;
+                console.log(left);
+                oDiv.style.left = left + 'px';
+                if (left > 200) {
+                    left = 20;
+                }
+                },60);
+                bTn.onclick = function () {
+                    clearInterval(timer1);
+                }
+            };
+
+        }
+    </script>
+
+</head>
+<body>
+<div class="box" id="box">→右边移动</div>
+<input type="button" value="开始" id="begin">
+<input type="button" value="停止" id="button">
+</body>
+</html>

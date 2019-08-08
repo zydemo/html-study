@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>038-封闭函数</title>
+</head>
+<script>
+    (function () {
+        var str = "nihao";
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            oDiv.style.color = 'red';
+            console.log(str);
+            // 获取整个html标签包裹的内容
+            console.log(document.documentElement.clientWidth);
+        }
+    })();
+    // 封闭函数的其它写法，在匿名函数前加~或者!
+    // ~function(){
+    //     window.onload = function () {
+    //         var oDiv = document.getElementById('div1');
+    //         oDiv.style.color = 'blue';
+    //     }
+    // }();
+
+    (function () {
+        var calc = function () {
+            var docElement = document.documentElement;
+            var clientWidthValue = docElement.clientWidth > 750 ? 750 : docElement.clientWidth;
+            docElement.style.fontSize = 20 * (clientWidthValue / 375) + 'px';
+
+        };
+        calc();
+        // 绑定window监听事件，窗口改变大小的时候执行calc
+        window.addEventListener('resize', calc);
+    })();
+</script>
+
+<body>
+<div id="div1">5555</div>
+</body>
+</html>

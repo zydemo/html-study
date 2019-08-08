@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟-倒计时</title>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            var future = new Date(2019,7,2,17,41,0); // 距离结束时间,记得月份要减1
+            var end_time = getdate(future);
+            var bTn = document.getElementById('btn');
+            var beginbTn = document.getElementById('begin');
+            var timego = function () {
+                // 当前时间
+                var now = new Date(); //获取的是本地时钟，实际开发中应该获取服务器时间
+                var start_time = getdate(now);
+                oDiv.innerHTML = "现在时间是：" + start_time[0] + " " +
+                    todou(start_time[2]) + ":" + todou(start_time[3]) + ":" + todou(start_time[4])+"，"+ toweek(start_time[1]);
+
+                // 倒计时
+                var lefts = parseInt((future-now)/1000); //除以1000转换为秒，默认是毫秒
+                var day = parseInt(lefts/86400);
+                var hour = parseInt((lefts%86400)/3600);
+                var minute = parseInt((lefts%86400%3600)/60);
+                var second = parseInt((lefts%60));
+                if (lefts >= 0) {
+                    oDiv2.innerHTML = "距" + end_time[0] + todou(end_time[2])+"时"+todou(end_time[3])+"分"+todou(end_time[4])+"秒"+
+                        "，还有" + day + "天" + hour + "时" + minute + "分" + second + "秒";
+                }if (lefts < 0 ){
+                    // window.location.href = "http://www.baidu.com";
+                    oDiv2.innerHTML = "距" + end_time[0] + todou(end_time[2])+"时"+todou(end_time[3])+"分"+todou(end_time[4])+"秒"+
+                        "，已过"+(-day)+"天" + (-hour)+"时" +(-minute)+"分"+(-second)+"秒";
+                }
+            };
+            timego();
+            beginbTn.onclick = function () {
+                timego();
+                var timer = setInterval(timego,1000);
+                 bTn.onclick = function () {
+                    clearInterval(timer);
+                };
+            };
+        };
+         function getdate(ev) {
+                    var year = ev.getFullYear();
+                    var month = ev.getMonth()+1; //记得+1(取值为0-11)
+                    var date = ev.getDate();
+                    var week = ev.getDay(); //星期（值0-6）
+                    var hour = ev.getHours();
+                    var minute = ev.getMinutes();
+                    var second = ev.getSeconds();
+                    var nianfen = year + "年"+ todou(month) + "月" + todou(date) + "日";
+                    return [nianfen,week,hour,minute,second];
+                }
+
+        function todou(ev) {
+            if (ev < 10) {
+                ev = '0' + ev;
+            }
+            return ev;
+        }
+
+        function toweek(num) {
+            switch(num){
+                case 0:
+                    return '星期天';
+                case 1:
+                    return '星期一';
+                case 2:
+                    return '星期二';
+                case 3:
+                    return '星期三';
+                case 4:
+                    return '星期四';
+                case 5:
+                    return '星期五';
+                case 6:
+                    return '星期六';
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<br />
+<div id="div2"></div>
+<br />
+<input type="button" id="begin" value="开始">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" id="btn" value="停止">
+</body>
+</html>

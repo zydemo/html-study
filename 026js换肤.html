@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js换肤</title>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            oDiv.style.color = 'red';
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            oBtn1.onclick = changeColor1;
+            oBtn2.onclick = changeColor2;
+
+            function changeColor1() {
+                oDiv.className = 'sty1';
+            }
+
+            function changeColor2() {
+                oDiv.className = 'sty2';
+            }
+        }
+    </script>
+    <style type="text/css">
+        .sty1 {
+            width: 200px;
+            height: 200px;
+            background-color: #ff6600;
+        }
+        .sty2 {
+            width: 500px;
+            height: 500px;
+            background-color: #00a0e9;
+        }
+    </style>
+
+</head>
+<body>
+<input type="button" id="btn1" value="皮肤1">
+<input type="button" id="btn2" value="皮肤2">
+<div id="div1" class="sty1">div元素</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+#div1{
+	color: red;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: 'Microsoft Yahei';
+	text-indent:40px;
+}
+h3{
+	color: blue;
+	font-weight:bold;
+}
+.hr1{
+	color: red;
+	
+}
+
+/*id选择器*/
+#div2{
+	text-align: left;
+	color: black;
+	font-weight: normal;
+	color: #020101;
+	font-style: italic;
+}
+
+/*类选择器，使用最多*/
+.red{
+	color: red
+}
+
+/*层级选择器*/
+.box .blue{
+	color: blue;
+	font-weight:bold;
+}
+
+/*组选择器*/
+.box2, .box3{
+	color: #bf0bd4;
+}
+
+/*伪类及伪元素选择器*/
+.box3:hover{
+	color: blue;
+	font-style: italic;
+}
+.box2:before{content: '行首文字';}
+.box3:after{content: '行尾文字';}
+
+.shizhong{
+	font-size: 30px;
+	color: red;
+}

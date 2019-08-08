@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>CSS3新增选择器</title>
+	<style type="text/css">
+		.list div:not(:nth-child(3)){
+			background-color: red;
+		}
+		h2:target{
+			color: blue;
+		}
+
+	div[data-attr^="ok"]{
+		color: blue;
+	}
+
+
+	</style>
+</head>
+<body>
+	<h3 align="center">CSS3新增选择器</h3>
+	<div class="list">
+		<h2>1</h2>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+	<a href="#tit01">E:target 对应锚点的样式</a>
+	<h2 id="tit01">E:target 对应锚点的样式</h2>
+	<div data-attr="ok">E[data-attr] 含有data-attr属性的元素 </div>
+	<div data-attr="ok hello">E[data-attr] 含有data-attr属性的元素 </div>
+
+
+</body>
+</html>

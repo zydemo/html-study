@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js变量-函数预解析</title>
+    <script>
+        //弹出undefined
+        alert(a);
+        var a = 123;
+        //会报错 c未定义
+        // alert(c);
+        //弹出hello
+        myalert();
+        function myalert() {
+            alert("hello")
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

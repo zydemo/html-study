@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>定时器制作倒计时</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            function timeleft(){
+                var now = new Date();
+                var future = new Date(2018,4,20,19,0,0);
+                var lefts = parseInt((future-now)/1000);
+                var day = parseInt(lefts/86400);
+                var hour = parseInt(lefts%86400/3600);
+                var min = parseInt(lefts%86400%3600/60);
+                var sec = lefts%60;
+                str = '距离2018年4月20日晚24点还剩下：'+day+'天'+hour+'小时'+min +'分'+sec+'秒';
+                oDiv.innerHTML = str;
+            }
+            timeleft();
+            setInterval(timeleft,1000);
+        }
+    </script>
+    
+
+</head>
+<body>
+	<h3 align="center">定时器制作倒计时</h3>
+    <div id="div1"></div>
+</body>
+</html>

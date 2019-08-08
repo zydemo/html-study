@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>通过.操作元素属性</title>
+  <script type="text/javascript">
+    window.onload = function(){
+      var oInput = document.getElementById('input1');
+      var oA = document.getElementById('link1');
+      // 读取属性值
+      var val = oInput.value;
+      var typ = oInput.type;
+      var nam = oInput.name;
+      var links = oA.href;
+      //写属性
+      oA.style.color = 'red';
+      oA.style.fontSize = val;
+    }
+
+
+  </script>
+</head>
+<body>
+	<h3 align="center">通过.操作元素属性</h3>
+  <input type="text" name="setsize" id="input1" value="20px">
+  <a href="http://www.baidu.com" id="link1">百度</a>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js嵌入页面方式</title>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <style type="text/css">
+        .box01{
+            height: 30px;
+            background-color: #ff6600;
+        }
+         .box02{
+             height: 130px;
+             background-color: #00a0e9;
+        }
+
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oDiv1 = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            var oDiv3 = document.getElementById('div3');
+            // innerHTML可以读取或者写入标签包裹的内容
+            alert(oDiv1.innerHTML);
+            oDiv2.innerHTML = '<a href="http://www.baidu.com">百度<a/>';
+            oDiv1.title = "getelementbyid";
+            // “font-size”，改成”style.fontSize”
+            oDiv1.style.fontSize = '50px';
+            // “class” 属性写成 “className”
+            oDiv3.className = 'box02';
+            // 通过“[ ]”操作属性
+            var attr = 'background';
+            oDiv2['style'][attr] = 'blue';
+            oDiv2.style[attr] = 'pink';
+        };
+    </script>
+</head>
+<body>
+	<!--<input type="button" value="弹窗" onclick="alert('555')">-->
+<div id="div1">div元素</div>
+<div class="box01" id="div2"></div>
+<div id="div3"></div>
+</body>
+</html>

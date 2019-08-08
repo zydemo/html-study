@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串处理</title>
+
+    <script>
+        var name = 'TOM';
+        var age = 16;
+        console.log('我的名字叫：'+ name+"，年龄是："+age+"岁。");
+
+        var a = 12;
+        var b = 13;
+        console.log(a+b);
+        console.log(a+name); // 12TOM
+        var c = '25';
+        console.log(parseInt(a)+parseInt(c)); //37
+        var d ='5.6';
+        console.log(parseInt(d)); // 5
+        console.log(parseFloat(d)); // 5.6
+        console.log(0.1+0.2); // 0.30000000000000004
+        console.log((0.1*100 + 0.2*100)/100); // 0.3
+        var e = '123adb';
+        console.log(parseInt(e)); // 123
+        var f = 0.01;
+        var g = 0.02;
+        console.log((parseFloat(f)*100+parseFloat(g)*100)/100); // 0.03
+
+        console.log("-----split-----");
+        var sTr = '2019-07-30';
+        var aRr = sTr.split("-");
+        var aRr2 = sTr.split("");
+        console.log(aRr); // ["2019", "07", "30"]
+        console.log(aRr2); // ["2", "0", "1", "9", "-", "0", "7", "-", "3", "0"]
+        document.title = aRr2;
+
+        var sTr2 = '#div';
+        var sTr3 = '.div';
+        var sTr4 = sTr2.charAt(0); //获取字符串中的某一个字符
+        if (sTr4 === '#') {
+            console.log("id选择器");
+        }
+        var sTr5 = 'hello word';
+        var num = sTr5.indexOf("word");
+        console.log(num); // 出现的位置 6，如果没找到结果是-1
+        console.log(sTr5.substring(2)); // llo word
+
+        var sTr6 = '12345468dsfd46fee1231eee8r'; // 字符串反转
+        var sTr7 = sTr6.split("").reverse().join("");
+        console.log(sTr7);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

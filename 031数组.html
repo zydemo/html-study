@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+
+    <script>
+        // var li = new Array(1,2,3,4); // 采用下面的方法创建数组
+        // alert(li.length);
+        var aRr = [1, 2, 'hello'];
+        alert(aRr.length);
+        alert(aRr[0]);
+        alert(aRr.join('-'));
+        aRr.push('word');
+        alert(aRr);
+
+        var aRr2 = [[1, 2, 3], [true, 'hi']];
+        alert(aRr2[1].length);
+        alert(aRr2[0]);
+        alert(aRr2[1][0]);
+        aRr2.push('结尾增加一个元素');
+        alert(aRr2);
+        aRr2.pop();
+        alert(aRr2);
+        aRr2.unshift('开头增加一个元素');
+        alert(aRr2);
+        aRr2.shift();//删除开头第一个元素
+        alert(aRr2);
+        aRr2.reverse();
+        alert(aRr2);//true, 'hi',1, 2, 3
+        aRr2[0].reverse();
+        alert(aRr2);//3,2,1,true, 'hi'
+
+        var aRr3 = ['a','b','c','a','b','c'];
+        alert(aRr3.indexOf('b')); // 返回数组中元素第一次出现的索引值 1,不存在返回-1
+
+        aRr3.splice(3,2,'e','f');//从索引值为3元素开始删除2个元素，并用e，f代替 a,b,c,e,f,c
+        alert(aRr3);
+        window.onload = function () {
+            var c = document.getElementsByTagName('input');
+            console.log(c.length);
+            console.log(c.item(0));
+            console.log(c[0]);
+            c[0].style.background = 'pink';
+            c[1].style.width = '30px';
+            for(var i=0;i<c.length;i++){
+                c[i].style.background = 'gold';
+            }
+        };
+         window.onload = function (){
+             var aList = document.getElementById('list1');
+             var aLi = aList.getElementsByTagName('li');//选择list1下的li
+             console.log(aLi);
+         };
+
+    </script>
+</head>
+<body>
+    <input name="myInput" type="text" size="20" /><br />
+    <input name="myInput" type="text" size="21" /><br />
+    <input name="myInput" type="text" size="22" /><br />
+    <ul id="list1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul id="list2">
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+        <li>05</li>
+    </ul>
+</body>
+</html>

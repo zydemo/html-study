@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript嵌入页面的方式</title>
+    <!-- 2.页面script标签嵌入 -->
+   <!--  <script type="text/javascript">
+        var a = '你好,欢迎光临！';
+        alert(a);
+    </script> -->
+    <script type="text/javascript">
+        // 单行注释
+        /*
+            多行注释
+            1、
+            2、
+        */
+        var a = '第一个弹窗';
+        var b = '第二个弹窗';
+        var c = 45,d = '多个变量';       
+        function fn(){
+            alert(a);
+            alert(b);
+            alert(c);
+            alert(d);
+            alert(f);// undefined
+        };        
+        fn();    
+        var f = 123;
+
+    </script>
+    
+</head>
+<body>
+	<h3 align="center">JavaScript嵌入页面的方式</h3>
+   <!-- 1.行间事件（主要用于事件） -->
+   <input type="button" name="" value="提交" onclick="alert('提交成功！');">
+    
+</body>
+</html>
