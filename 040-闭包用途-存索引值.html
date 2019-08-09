@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>040-闭包用途-存循环索引值</title>
+</head>
+<script>
+    window.onload = function (ev) {
+        var aLi = document.getElementsByTagName('li');
+        console.log(aLi.length);
+        for(var i=0;i<aLi.length;i++){
+            // 闭包-存索引值
+            (function (i) { // i 形参
+                aLi[i].onclick = function () {
+                    aLi[i].style.background = 'gold';
+                }
+            })(i);//i 实参
+        }
+    };
+</script>
+
+<style>
+    li{
+        height: 30px;
+        background: #00a0e9;
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+<ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
+
+</body>
+</html>
