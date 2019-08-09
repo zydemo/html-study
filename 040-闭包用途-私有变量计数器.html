@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>040-闭包用途-私有变量计数器</title>
+    <script>
+        var count = (function () {
+            var a = 0;
+            function bb() {
+                a++;
+                alert(a);
+                return a;
+            }
+            return bb;
+        })();
+
+        alert(count()); // 1
+        alert(count()); // 2
+        var c = count();
+        alert(c);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
