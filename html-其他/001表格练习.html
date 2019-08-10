@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>html段落</title>
+</head>
+<body>
+	<!-- 跳转到锚点001 -->
+	<a href="#001">
+		<h1>
+			一级标题
+		</h1>
+	</a>
+	<h2>二级标题</h2>
+	<h3>三级标题</h3>
+	<h4>四级标题</h4>
+	<!-- 不会链接到顶部,不做任何操作 -->
+	<a href="javascript:;">
+		<h5>五级标题</h5>
+	</a>
+	<!-- 会链接到顶部 -->
+	<a href="#" title="六级标题">
+		<h6>六级标题</h6>
+	</a>
+	<p>
+		3&lt;5 <br />
+		5&gt;3 5>3
+		hello world
+		这是一个段落标签这是&nbsp;&nbsp;&nbsp;&nbsp;一个<strong>111段落标签</strong>这是一个<b>段落标签</b>这是<br />一个段落<a href="http://www.baidu.com" title="百度">标签</a>
+		<em>强调Python</em>不是强调的<i>前端开发</i>
+	</p>
+	<div>
+		<!-- 设置锚点001 -->
+		<span id="001">
+			111
+		</span>
+	</div>
+	<!--图片链接地址-->
+	<a href="http://www.baidu.com" title="百度" target="_black">
+		<img src="./images/t1.png" width="30%" alt="清单">
+	</a>
+
+	<dl>
+		<dt>html</dt>
+		<dd>负责页面的结构</dd>
+
+		<dt>CSS</dt>
+		<dd>负责页面的表现</dd>
+
+		<dt>JavaScript</dt>
+		<dd>负责页面的行为</dd>
+	</dl>
+
+	<h3>有序列表</h3>
+	<ol>
+		<li>学习html</li>
+		<li>学习CSS</li>
+		<li>学习JavaScript</li>
+	</ol>
+
+	<h4>无序列表</h4>
+	<ul>
+		<li><a href="#" title="标题一">新闻标题一</a></li>
+		<li><a href="#" title="标题二">新闻标题二</a></li>
+		<li><a href="#" title="标题三">新闻标题三</a></li>
+	</ul>
+	
+	<h4>表格练习</h4>
+<!-- 	<table border="1" width="500" height="300" align="left">
+		<tr>
+			<th valign="top">序号</th>
+			<th valign="middle">产品名称</th>
+			<th valign="bottom">产品价格</th>
+			<th>产品数量</th>
+		</tr>
+		<tr align="center">
+			<td>1</td>
+			<td>Apple</td>
+			<td>￥5.00</td>
+			<td>100</td>
+		</tr>
+		<tr align="center">
+			<td>2</td>
+			<td>Orange</td>
+			<td>￥4.00</td>
+			<td>300</td>
+		</tr>
+	</table> -->
+
+	<h3>个人简历表</h3>
+	<table border="2" cellpadding="10" cellspacing="5" width="600" height="300">
+		<tr>
+			<th colspan="5" height="15%" align="left"><b>基本情况</b></th>	
+		</tr>
+
+		<tr>
+			<td width="18%">姓&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+			<td></td>
+			<td>性&nbsp;&nbsp;&nbsp;&nbsp;别</td>
+			<td width="18%"></td>
+			<td rowspan="5" width="28%"><img src="images/renwu.png" width="90%" alt="简历头像"></td>
+		</tr>
+
+		<tr>
+			<td>民&nbsp;&nbsp;&nbsp;&nbsp;族</td>
+			<td></td>
+			<td>出生日期</td>
+			<td></td>			
+		</tr>
+
+		<tr>
+			<td>政治面貌</td>
+			<td></td>
+			<td>健康情况</td>
+			<td></td>			
+		</tr>
+
+		<tr>
+			<td>籍&nbsp;&nbsp;&nbsp;&nbsp;贯</td>
+			<td></td>
+			<td>学&nbsp;&nbsp;&nbsp;&nbsp;历</td>
+			<td></td>			
+		</tr>
+
+		<tr>
+			<td>电子信箱</td>
+			<td></td>
+			<td>联系电话</td>
+			<td></td>			
+		</tr>
+
+		<tr>
+			<td colspan="5" height="15%"><b>工作经历</b></td>	
+		</tr>
+
+		<tr>
+			<td width="25%">时间</td>
+			<td width="40%">公司名称</td>
+			<td colspan="3">职位</td>
+			
+		</tr>
+
+		<tr height="30%">
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+/*div*/
+div{
+	color: red;
+ 	font-size: 19px;
+ 	/*字体*/
+ 	font-family:'Microsoft Yahei';
+ 	/*行高*/
+ 	line-height:45px;
+ 	/*倾斜*/
+ 	font-style: italic;
+ 	/*加粗*/
+ 	font-weight: bold; 
+}
+
+.yahei{
+	font-family: 'Microsoft Yahei';
+}
+
+.color{
+	color: pink;
+	/*顶格*/
+	margin: 0;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>012特征布局-导航条</title>
+	<style type="text/css">
+		.menu{
+			/*去掉ul前面的点点*/
+			list-style: none;
+			background-color: #55a8ea;
+			padding: 0;
+			width: 960px;
+			height: 40px;
+			margin: 50px auto 0;
+			position: relative;
+		}
+		.menu li{
+			/*左浮动*/
+			float: left;
+			width: 100px;
+			height: 40px;
+			/*子元素a是内联元素，父元素可以用text-align属性设置子元素水平对齐方式，用line-height属性值设置垂直对齐方式*/
+			text-align: center;
+			line-height: 40px;
+		}
+		.menu li a{
+			text-decoration: none;
+			/*font-family: 'Microsoft Yahei';
+			font-size: 14px;*/
+			color: #fff;
+			font:14px/40px 'Microsoft Yahei';
+		}
+		.menu .active{
+			background-color: #00619f;
+		}
+		/* 装饰性的用背景图，无需搜素引擎搜索到*/
+		.menu .new{
+			width: 33px;
+			height:20px;
+			background: url(images/new.png) no-repeat;
+			position: absolute;
+			left: 430px;
+			top: -8px;
+
+		}
+		.menu li:hover{			
+			background-color: #00619f;
+		}
+		.menu .new:hover{
+			background: url(images/new.png) no-repeat;
+			/*background-color: unset;*/
+		}
+		.menu li a:hover{
+			color: red;
+		}
+
+	</style>
+
+	
+</head>
+<body>
+	
+	<h2 align="center">012特征布局-导航条</h2>
+	<ul class="menu">
+		<li class="active"><a href="">首页</a></li>
+		<li><a href="">网站建设</a></li>
+		<li><a href="">网站建设</a></li>
+		<li><a href="">网站建设</a></li>
+		<li><a href="">企业AI</a></li>		
+		<li><a href="">网站建设</a></li>
+		<!-- 装饰性的用背景图，无需搜素引擎搜索到，内容性的产品图用img，搜索引擎可以搜素到-->
+		<li class="new"><a href=""></a></li>
+		
+	
+</body>
+</html>
