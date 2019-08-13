@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>009菜单练习</title>
+	<style type="text/css">
+		.menu{
+			width: 694px;
+			height: 50px;
+			margin: 50px auto 0;
+			/*去掉ul前面的点点*/
+			list-style: none;
+			/*ul默认有padding样式，需要去掉*/
+			padding: 0;
+			/*父级字体设为0，去掉边框缝隙*/
+			font-size: 0;
+		}
+		.menu li{
+			/*元素以内联块元素显示*/
+			display: inline-block;
+			height: 48px;
+			width: 98px;
+			/*盒子边框*/
+			border: 1px solid gold;
+			/*负值可以让盒子外边框合并*/
+			margin-right: -1px;
+			font-size: 16px;
+			/*文字水平居中*/
+			text-align: center;
+			/*文字的行高*/
+			line-height: 48px;
+		}
+		.menu a{
+			/*去掉下划线*/
+			text-decoration: none;
+			font-family:'Microsoft Yahei';
+			color: blue;
+		}
+		/*鼠标停留在字上的颜色*/
+		.menu a:hover{
+			color:red;
+		}
+		/*鼠标停留在框内的背景颜色*/
+		.menu li:hover{
+			background-color:cyan;	
+		}
+
+	</style>
+	
+</head>
+<body>	
+	<h2 align="center">009菜单练习</h2>
+	<ul class="menu">
+		<li><a href="http://www.baidu.com" target="black">首页</a></li>
+		<li><a href="">公司简介</a></li>
+		<li><a href="">解决方案</a></li>
+		<li><a href="">公司新闻</a></li>
+		<li><a href="">行业动态</a></li>
+		<li><a href="">招贤纳才</a></li>
+		<li><a href="">联系方式</a></li>		
+	</ul>	
+</body>
+</html>
