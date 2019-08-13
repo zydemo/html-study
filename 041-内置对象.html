@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>041-内置对象</title>
+    <script>
+        window.onload = function () {
+            var oSpan = document.getElementById('span');
+            var oSpan2 = document.getElementById('span2');
+            var oSpan3 = document.getElementById('span3');
+            var oSpan4 = document.getElementById('span4');
+            var Oname = window.location.search; //获取地址参数部分 ?name=Jack
+            var arr = Oname.split("=");
+            oSpan.innerHTML = arr[1];
+            var href = window.location.href; //获取上一个跳转页面的地址(需要服务器环境)
+            console.log(href);
+            oSpan2.innerHTML = '<a href=' + href + '>' + href + '</a>';
+
+            var hash =window.location.hash; //获取页面锚点或者叫哈希值 #name
+            console.log(hash);
+
+            oSpan3.innerHTML = Math.random(); // 获取0-1的随机数
+            var a = 10;
+            var b = 20;
+            // var num = Math.random()*(b-a)+a; // a-b随机数
+            // alert(num);
+            var str='';
+            for(var i=0;i<10;i++){
+                var num = Math.random()*(b-a)+a;
+                str+='<li>'+num+'》》向下取整》》'+Math.floor(num)+'《《向上取整《《'+Math.ceil(num)+'</li>';
+            }
+            oSpan4.innerHTML =  str;
+        };
+    </script>
+</head>
+<body>
+<div>欢迎 <span id="span"></span>光临主页~</div>
+<div>上一个跳转页面： <span id="span2"></span></div>
+<div>0-1随机数： <span id="span3"></span></div>
+<div>10-20随机10个数： <ul id="span4"></ul></div>
+
+<div>
+    <h3>一、document</h3>
+    <p>document.referrer //获取上一个跳转页面的地址(需要服务器环境)</p>
+
+    <h3>二、location</h3>
+    <p>window.location.href //获取或者重定url地址</p>
+    <p>window.location.search //获取地址参数部分</p>
+    <p>window.location.hash //获取页面锚点或者叫哈希值</p>
+
+    <h3>三、Math</h3>
+    <p>Math.random 获取0-1的随机数</p>
+    <p>Math.floor 向下取整</p>
+    <p>Math.ceil 向上取整</p>
+
+</div>
+
+</body>
+</html>

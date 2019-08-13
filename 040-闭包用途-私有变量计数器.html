@@ -8,20 +8,19 @@
             var a = 0;
             function bb() {
                 a++;
-                alert(a);
+                console.log(a);
                 return a;
             }
             return bb;
         })();
-
-        alert(count()); // 1
-        alert(count()); // 2
+        console.log(count()); // 1
+        console.log(count()); // 2
         var c = count();
-        alert(c);
+        console.log(c);
     </script>
 
 </head>
 <body>
-
+<div>闭包用途-私有变量计数器</div>
 </body>
 </html>
