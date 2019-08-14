@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>040-闭包用途-选项卡</title>
+    <style>
+        .btns {
+            width: 500px;
+            height: 50px;
+        }
+
+        .btns input {
+            width: 100px;
+            height: 50px;
+            background-color: #ddd;
+            color: #666;
+            border: 0;
+        }
+
+        .btns input.cur {
+            /*选中选项卡背景色*/
+            background-color: #ff6600;
+        }
+
+        .contens div {
+            width: 500px;
+            height: 200px;
+            background-color: #ff6600;
+            display: none;
+            line-height: 300px;
+            text-align: center;
+        }
+
+        .contens div.active {
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var aBtn = document.getElementById('btns').getElementsByTagName('input');
+            var aCon = document.getElementById('contens').getElementsByTagName('div');
+            for (var i = 0; i < aBtn.length; i++) {
+                (function (i) {
+                    aBtn[i].onclick = function () {
+                        for (var j = 0; j < aBtn.length; j++) {
+                            aBtn[j].className = '';
+                            aCon[j].className = '';
+                        }
+                        this.className = 'cur';
+                        aCon[i].className = 'active'; // 不用闭包获取不到i值
+                    }
+                })(i);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div id="btns" class="btns">
+    <input type="button" value="选项卡一" class="cur">
+    <input type="button" value="选项卡二">
+    <input type="button" value="选项卡三">
+</div>
+
+<div id="contens" class="contens">
+    <div class="active">文字内容一</div>
+    <div>文字内容二</div>
+    <div>文字内容三</div>
+</div>
+
+</body>
+</html>
