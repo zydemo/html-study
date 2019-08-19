@@ -24,7 +24,7 @@
 
         .contens div {
             width: 500px;
-            height: 200px;
+            height: 300px;
             background-color: #ff6600;
             display: none;
             line-height: 300px;
@@ -40,6 +40,7 @@
             var aBtn = document.getElementById('btns').getElementsByTagName('input');
             var aCon = document.getElementById('contens').getElementsByTagName('div');
             for (var i = 0; i < aBtn.length; i++) {
+                //  闭包
                 (function (i) {
                     aBtn[i].onclick = function () {
                         for (var j = 0; j < aBtn.length; j++) {
@@ -47,7 +48,7 @@
                             aCon[j].className = '';
                         }
                         this.className = 'cur';
-                        aCon[i].className = 'active'; // 不用闭包获取不到i值
+                        aCon[i].className = 'active'; // 如果不用闭包则获取不到i的值
                     }
                 })(i);
             }
