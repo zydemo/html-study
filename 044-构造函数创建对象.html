@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>044-构造函数创建对象</title>
+    <script>
+        function Person(name,age,job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+
+            this.showname = function () {
+                alert(this.name);
+            };
+            this.showage = function () {
+                alert(this.age);
+            };
+            this.showjob = function () {
+                alert(this.job);
+            };
+        }
+
+        var Tom = new Person('tom',20,'科学家');
+        Tom.showname();
+        Tom.showage();
+        Tom.showjob();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

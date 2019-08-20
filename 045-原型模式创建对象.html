@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>045-原型模式创建对象</title>
+    <script>
+        function Person(name,age,job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+        }
+        Person.prototype.showname = function () {
+            alert(this.name);
+        };
+        Person.prototype.showage = function () {
+            alert(this.age);
+        };
+        Person.prototype.showjob = function () {
+            alert(this.job);
+        };
+
+        var Tom = new Person('Tom',22,'老师');
+        var jack = new Person('jack',19,'医生');
+        // Tom.showname();
+        jack.showage();
+        jack.showage = function () {
+          alert('修改年龄:'+this.age);
+        };
+        jack.showage();
+        alert(Tom.showname === jack.showname); //true
+        alert(Tom.showage === jack.showage); // false
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
