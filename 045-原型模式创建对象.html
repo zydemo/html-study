@@ -22,15 +22,13 @@
         var Tom = new Person('Tom',22,'老师');
         var jack = new Person('jack',19,'医生');
         // Tom.showname();
-        jack.showage();
         jack.showage = function () {
           alert('修改年龄:'+this.age);
         };
+        Tom.showage();
         jack.showage();
         alert(Tom.showname === jack.showname); //true
         alert(Tom.showage === jack.showage); // false
-
-
 
     </script>
 </head>
