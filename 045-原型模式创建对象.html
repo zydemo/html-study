@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <title>045-原型模式创建对象</title>
     <script>
-        function Person(name,age,job) {
+        function Person(name, age, job) {
             this.name = name;
             this.age = age;
             this.job = job;
         }
+
         Person.prototype.showname = function () {
             alert(this.name);
         };
         Person.prototype.showage = function () {
-            alert(this.age);
+            alert('原型方法里' + this.name + '的年龄：' + this.age);
         };
         Person.prototype.showjob = function () {
             alert(this.job);
         };
 
-        var Tom = new Person('Tom',22,'老师');
-        var jack = new Person('jack',19,'医生');
+        var Tom = new Person('Tom', 22, '老师');
+        var jack = new Person('jack', 19, '医生');
         // Tom.showname();
         jack.showage = function () {
-          alert('修改年龄:'+this.age);
+            alert(this.name + '的年龄:' + this.age);
         };
         Tom.showage();
         jack.showage();

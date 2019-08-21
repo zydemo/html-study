@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>050-jquery选择器</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $('#div1').css({color: 'red'});
+            $('.box').css({fontSize: '30px'});
+            $('.list li').css({background: 'gold', color: 'red'});
+            $('input[name=first]').css({fontSize: '30px', color: 'green'}); // 选择name属性等于first的input元素
+            $('.list li:first').css({background: 'pink'}); //选择id为list元素下的第一个li
+            $('.list li:odd').css({fontSize: '20px'}); //选择id为list元素下的li的奇数行(索引从0开始）
+            $('.list li:eq(0)').css({fontSize: '40px'});//选择id为list元素下的第一个li(索引从0开始）
+            $('div').has('p').css({color: '#FF20F2'}); //选择包含p元素的div元素
+            $('div').not('.myClass').css({color: '#ff6600'}); //选择class不是myClass的div元素
+            $('div').filter('.myClass').css({fontSize: '40px'}); //选择class等于myClass的div元素
+            $('div').next('p').css({color: 'pink'}); // 选择div元素后面的第一个p元素
+            $('div').find('.p1').css({color: '#30FFAE'}); //选择div内的class等于p1的元素
+
+        })
+    </script>
+    <style>
+        #div1 {
+            color: #ff6600;
+        }
+
+        .box {
+            color: blue;
+        }
+
+        .list li {
+            background-color: #55a8ea;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="div1">第一个div</div>
+<div class="box">第二个div</div>
+<ul class="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
+<input type="text" name="first" value="你好">
+<div>
+    这个div不包含p元素
+</div>
+<div class="myClass">
+    <p>这个div包含p元素</p>
+</div>
+<p>倒数第三个p元素</p>
+<p>倒数第二个p元素</p>
+<div>
+    <p class="p1">最后一个p元素</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>048-新增选择器</title>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var Olist1 = document.getElementById('list1').getElementsByTagName('li');
+            oDiv.style.color = 'gold';
+            for(var i=0;i<Olist1.length;i++){
+                Olist1[i].style.color = 'red';
+            }
+
+            var div = document.querySelector('#div1');
+            alert(div); // [object HTMLDivElement]
+            var aLi = document.querySelectorAll('.list2 li');
+            alert(aLi.length); // 8
+
+          for(var j=0;j<aLi.length;j++){
+            aLi[j].style.color = 'blue';
+          }
+    }
+    </script>
+
+</head>
+<body>
+    <div id="div1">div</div>
+    <ul class="list1" id="list1">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+        <li>g</li>
+        <li>h</li>
+    </ul>
+
+    <ul class="list2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

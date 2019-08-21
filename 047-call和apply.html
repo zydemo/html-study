@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>047-call和apply</title>
+    <script>
+        function aa(a, b) {
+            alert('this:' + this + ',a:' + a + ',b:' + b);
+        }
+
+        aa(2, 3); // this:[object Window],a:2,b:3
+        aa.call('abc', 3, 5); // this:abc,a:3,b:5
+        aa.apply('abc', [7, 8]); // this:abc,a:7,b:8
+    </script>
+</head>
+<body>
+
+</body>
+</html>

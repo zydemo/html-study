@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>046-类的继承</title>
+    <script>
+        function Fclass(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        Fclass.prototype.showname = function () {
+            alert(this.name);
+        };
+        Fclass.prototype.showage = function () {
+            alert(this.age);
+        };
+        function Sclass(name,age,job) {
+            Fclass.call(this,name,age); // 属性继承：用call或者apply继承父类的属性（name和age继承父类属性）
+            this.job = job; // Sclass独有的属性job
+        }
+        Sclass.prototype = new Fclass(); // 方法继承：将父类的一个实例赋值给子类的原型属性
+        Sclass.prototype.showjob = function () {
+            alert(this.job);
+        };
+
+        var tom = new Sclass('tom',25,'工程师');
+        tom.showname();
+        tom.showage();
+        tom.showjob();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
