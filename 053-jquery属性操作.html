@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>053-jquery属性操作</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            alert($('.box').html()); // 读取
+            $('.box').html('<a href="http://www.baidu.com" target="_blank">百度网</a>'); //设置html内容,增加标签结构
+            $('.box').attr({title:'百度'}); //增加title属性
+            alert($('.box').attr('class')); //读取class样式名字 》》box
+            alert($('#check').prop('checked')); // 获取id为check的选中状态，true还是false
+            $('#check').prop({checked:true}); // 设置check的状态为选中
+            alert($('.box2').text()); //不带标签获取文本内容
+            $('.box2').text('<a href="http://www.baidu.com" target="_blank">百度网</a>'); //不能增加标签结构，当纯文本处理
+
+        })
+
+    </script>
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="box">div元素</div>
+<input type="checkbox" id="check">多选框
+<div class="box2">
+    <span>div内的span元素</span>
+</div>
+</body>
+</html>

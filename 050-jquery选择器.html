@@ -9,16 +9,28 @@
             $('#div1').css({color: 'red'});
             $('.box').css({fontSize: '30px'});
             $('.list li').css({background: 'gold', color: 'red'});
-            $('input[name=first]').css({fontSize: '30px', color: 'green'}); // 选择name属性等于first的input元素
-            $('.list li:first').css({background: 'pink'}); //选择id为list元素下的第一个li
-            $('.list li:odd').css({fontSize: '20px'}); //选择id为list元素下的li的奇数行(索引从0开始）
-            $('.list li:eq(0)').css({fontSize: '40px'});//选择id为list元素下的第一个li(索引从0开始）
+            $('input[name=first]').css({fontSize: '30px'}); // 选择name属性等于first的input元素
+            $('.list li:first').css({background: 'pink'}); //选择class为list元素下的第一个li
+            $('.list li:odd').css({fontSize: '20px'}); //选择class为list元素下的li的奇数行(索引从0开始）
+            $('.list li:eq(0)').css({fontSize: '40px'});//选择class为list元素下的第一个li(索引从0开始）
             $('div').has('p').css({color: '#FF20F2'}); //选择包含p元素的div元素
             $('div').not('.myClass').css({color: '#ff6600'}); //选择class不是myClass的div元素
             $('div').filter('.myClass').css({fontSize: '40px'}); //选择class等于myClass的div元素
-            $('div').next('p').css({color: 'pink'}); // 选择div元素后面的第一个p元素
+            $('div').next('p').css({color: 'pink'}); // 选择div元素后面的第一个p元素,nextAll是所有p元素
             $('div').find('.p1').css({color: '#30FFAE'}); //选择div内的class等于p1的元素
-
+            $('#myForm input').css({color:'red'}); //选择表单中的input元素
+            $('div').first().css('fontSize','40px'); //选择第一个div元素
+            $('input').closest('form').css('marginTop','40px'); // 选择离input最近的form父元素（margin-top这么写也可以）
+            $('#span01').closest('div').css('background','#aaa'); // 选择离id为span01最近的div父元素
+            $('#span01').parent().css('fontSize','50px'); //id为span01的父元素
+            //选择id为list的所有子元素,并通过end()返回到父级元素设置背景色绿色，上面第三个$('.list li')不能回到父级元素
+            $('.list').children().css('text-align','center').end().css({background:'green'});
+            //id为list下的第三个li设置背景色金色，其他的li同级元素设置粉色背景色
+            $('.list li:eq(2)').css({background: 'gold'}).siblings().css({background: 'pink'});
+            console.log($('input[name=first]').css('font-size'));//读取name属性等于first的input字体大小
+            $('.box').addClass('myClass'); //class属性为box的元素追加名为myClass样式属性
+            $('input[name=first]').addClass('myClass'); //name属性等于first的input追加名为myClass样式属性
+            $('input[name=first]').removeClass('myClass'); //name属性等于first的input移除名为myClass样式属性
         })
     </script>
     <style>
@@ -33,6 +45,9 @@
         .list li {
             background-color: #55a8ea;
             margin-bottom: 10px;
+        }
+        .myClass{
+            background-color: #8a6d3b;
         }
     </style>
 
@@ -61,6 +76,17 @@
 <p>倒数第二个p元素</p>
 <div>
     <p class="p1">最后一个p元素</p>
+</div>
+
+<form action="" id="myForm">
+    <input type="text" value="表单测试">
+    <input type="button" value="点击">
+</form>
+
+<div>
+    <p>
+        <span id="span01">父级元素测试</span>
+    </p>
 </div>
 
 </body>

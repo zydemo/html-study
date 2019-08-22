@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>051-绑定click事件</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                $('.box').toggleClass('sty');
+            })
+        })
+
+    </script>
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 200px;
+        }
+        .sty{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+<input type="button" value="颜色切换" id="btn">
+<div class="box">内容</div>
+
+</body>
+</html>

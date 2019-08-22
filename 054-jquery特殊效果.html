@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>054-jquery特殊效果</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+
+                // $('.box').fadeToggle(); //切换淡入淡出
+                $('.box').fadeIn('fast', function () {
+                    $('.box').html('<div class="box2">淡入淡出</div>');
+                    setTimeout(function () {
+                        $('.box').html('');
+                        $('.box').fadeOut('slow'); //fadeOut() 淡出
+                    }, 500);
+                });
+                // $('.box').slideToggle(); //依次展开或卷起
+            })
+        })
+
+    </script>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #ff6600;
+            margin-top: 20px;
+        }
+        .box2{
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="效果切换">
+<div class="box"></div>
+</body>
+</html>
