@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>056-jquery动画</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            /*
+            参数:
+            1、属性设置{}
+            2、speed：速度，毫秒
+            3、swing 默认值,开始和结束慢速，中间快速
+               linear：匀速
+            4、回调函数
+            */
+            $('#div1').animate({width:300,height:300},1000,'linear',function () {
+                $(this).animate({marginLeft:500},1000,function () {
+                    $(this).animate({marginTop:500},1000,'linear');
+                })
+            })
+        });
+
+    </script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="box"></div>
+</body>
+</html>

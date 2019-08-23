@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>057-jquery循环</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // $('.list li').html('11111');
+            // $('.list li').css({background:'gold'});
+            $('.list li').each(function (index) {
+                // $(this)为每一个li,index是每一个索引值
+                $('.list li:odd').css({background:'green'});
+                $('.list li:even').css({background:'gold'});
+                $(this).html(index+1);
+                // $('.list li').eq(index).html(index+1);
+            })
+
+        })
+    </script>
+    <style>
+        .list{
+            margin-top: 100px;
+            text-align: center;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<ul class="list">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

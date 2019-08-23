@@ -17,6 +17,8 @@
                     }, 500);
                 });
                 // $('.box').slideToggle(); //依次展开或卷起
+                // id为div1的ul子元素慢速淡出的父元素(也就是div1)的同级元素(也就是div2)的ul子元素慢速依次展开或卷起
+                $('#div1').children('ul').fadeOut('slow').parent().siblings().children('ul').slideToggle('slow');
             })
         })
 
@@ -32,10 +34,29 @@
             text-align: center;
             line-height: 200px;
         }
+        ul{
+            height: 200px;
+        }
     </style>
 </head>
 <body>
 <input type="button" id="btn" value="效果切换">
 <div class="box"></div>
+
+<div id="div1">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+</div>
+<div id="div2">
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+</div>
 </body>
 </html>

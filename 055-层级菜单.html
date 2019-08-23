@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>055-层级菜单</title>
+    <style>
+        body {
+            font-family: "Microsoft Yahei";
+        }
+
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none; /* 去掉ul前面的点点*/
+        }
+
+        .menu {
+            width: 200px;
+            margin: 70px auto 0;
+        }
+
+        .menu .level,.menu li ul a{
+            display: block;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            text-decoration: none; /* 去掉下划线*/
+            background-color: #3366cc;
+            color: #fff;
+            font-size: 18px;
+            text-indent: 10px; /*首行缩进*/
+        }
+        .menu li ul li {
+            border-bottom: 1px solid #afc6f6;
+        }
+        .menu .level{
+            border-bottom: 1px solid #afc6f6;
+        }
+        .menu li ul {
+            display: none;
+        }
+
+        .menu li ul a {
+            font-size: 16px;
+            text-indent: 20px;
+            background-color: #afc6f6;
+        }
+
+        .menu li ul li {
+            border-bottom: 1px solid #afc6f6;
+        }
+
+        .menu li ul.current {
+            display: block;
+        }
+
+        .menu li ul li a:hover {
+            background-color: #f6b544;
+        }
+        .menu li a:hover{
+            background-color: #a94442;
+        }
+
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function () {
+        $('.level').click(function () {
+            // $(this).next().slideToggle();
+            $(this).next().slideToggle().parent().siblings().children('ul').slideUp();
+        });
+    })
+    </script>
+</head>
+<body>
+<ul class="menu">
+    <li>
+        <a href="#" class="level">水果</a>
+        <ul class="current">
+            <li><a href="#">葡萄</a></li>
+            <li><a href="#">香蕉</a></li>
+            <li><a href="#">猕猴桃</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="level">海鲜</a>
+        <ul>
+            <li><a href="#">扇贝</a></li>
+            <li><a href="#">龙虾</a></li>
+            <li><a href="#">大闸蟹</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="level">肉类</a>
+        <ul>
+            <li><a href="#">羊肉</a></li>
+            <li><a href="#">猪肉</a></li>
+            <li><a href="#">牛肉</a></li>
+        </ul>
+    </li>
+     <li>
+        <a href="#" class="level">蔬菜</a>
+        <ul>
+            <li><a href="#">白菜</a></li>
+            <li><a href="#">胡萝卜</a></li>
+            <li><a href="#">茄子</a></li>
+        </ul>
+    </li>
+
+</ul>
+</body>
+</html>
