@@ -17,7 +17,7 @@
             border: 1px solid #ccc;
         }
         #accordion ul{list-style: none;}
-        #accordion ul li{height:350px;position:absolute;background:#fff;}
+        #accordion ul li{width:643px;height:350px;position:absolute;background:#fff;}
         #accordion ul li span{
             display: block;
             width: 20px;
@@ -28,15 +28,15 @@
             padding-top: 5px;
             cursor: pointer; /*显示的光标的类型（形状）:pointer 一只手形状*/
         }
-        #accordion ul li img{display: block;float: right;}
+        #accordion ul li img{display: block;float: right;height: 350px;}
         .bar01{left:0;}
         .bar02{left:643px;}
         .bar03{left:664px;}
         .bar04{left:685px;}
         .bar05{left:706px;}
-        .bar01 span{background-color: #55a8ea}
-        .bar02 span{background-color: #7e888b}
-        .bar03 span{background-color: #00a0e9}
+        .bar01 span{background-color: #09e0b5}
+        .bar02 span{background-color: #3d7fbb}
+        .bar03 span{background-color: #5ca716}
         .bar04 span{background-color: #008cff}
         .bar05 span{background-color: #ff6600}
     </style>
@@ -46,6 +46,9 @@
                 $(this).animate({left:$(this).index()*21});
                 $(this).prevAll().each(function () {
                     $(this).animate({left:$(this).index()*21});
+                });
+                $(this).nextAll().each(function () {
+                    $(this).animate({left:727-(5-$(this).index())*21});
                 })
 
             })
