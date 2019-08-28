@@ -7,10 +7,10 @@
     <script>
         $(function () {
             var $pos = $('.pos');
-            var pos = $pos.offset();
-            // 获取第三个盒子宽度和高度
-            var w = $pos.outerWidth();
-            var h = $pos.outerHeight();
+            var pos = $pos.offset();// 获取元素相对页面的绝对位置
+            // 获取第三个盒子宽度和高度,包括padding和border的width和height
+            var w = $pos.outerWidth(); // 100
+            var h = $pos.outerHeight(); // 100
             $('.pop').css({left: pos.left + w, top: pos.top});
             $('.pos').mouseover(function () {
                 $('.pop').show();
@@ -18,15 +18,19 @@
             $('.pos').mouseout(function () {
                 $('.pop').hide();
             })
+            alert($(window).height()); //获取可视区高度,一屏的高度
+            alert($(document).height()); // 获取页面高度
+            console.log($(document).scrollTop()); // 获取页面滚动距离
         })
 
     </script>
     <style>
-        .con{
+        .con {
             width: 600px;
             height: 600px;
             margin: 50px auto 0;
         }
+
         .box {
             width: 100px;
             height: 100px;
@@ -46,7 +50,6 @@
             left: 0;
             top: 0;
             display: none;
-
         }
     </style>
 </head>

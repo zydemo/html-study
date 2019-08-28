@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>060-置顶菜单-滚动到顶</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // top按钮返回顶部效果
+            $('.toTop').click(function () {
+                $('html,body').animate({scrollTop:0},500)
+            });
+            $(window).scroll(function () {
+                var nowTop = $(document).scrollTop(); // 获取页面滚动距离
+                if (nowTop>200) {
+                    $('.menu').css({
+                        position:'fixed',
+                        left:'50%',
+                        top:0,
+                        marginLeft:-480
+                    });
+                    $('.menu_pos').show();
+                    $('.toTop').fadeIn();
+
+                }else {
+                    $('.menu').css({
+                        position: 'static',
+                        marginLeft:'auto'
+                    });
+                    $('.menu_pos').hide();
+                    $('.toTop').fadeOut();
+                }
+            })
+        })
+
+    </script>
+    <style>
+        body{margin: 0;}
+        .logo_bar{
+            width: 960px;
+            height: 200px;
+            background-color: #f0f0f0;
+            margin: 0 auto;
+        }
+        .menu,.menu_pos{
+            width: 960px;
+            height: 50px;
+            margin: 0 auto;
+            background-color: #ffa71a;
+            text-align: center;
+            line-height: 50px;
+        }
+        .menu_pos{
+            display: none;
+        }
+        .down_con{
+            width: 960px;
+            height: 1800px;
+            margin: 0 auto;
+        }
+        .down_con p{
+            text-align: center;
+            margin-top: 100px;
+        }
+        .toTop{
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            border: 2px solid #bb0000;
+            color: #bb0000;
+            background-color: #fff;
+            /*cursor: pointer;*/
+            border-radius: 8px;
+            opacity: 0.75;
+            padding: 6px 12px;
+            font-size: 18px;
+            outline: none;
+            text-decoration: none;
+            line-height: 50px;
+            text-align: center;
+            display: none;
+        }
+        .toTop:hover{
+            color: #fff;
+            background-color: #bb0000;
+        }
+
+    </style>
+</head>
+<body>
+<div class="logo_bar">顶部logo</div>
+<div class="menu">置顶菜单</div>
+<div class="menu_pos">置顶菜单脱离文档流的时候用这个代替它的位置，防止下面的内容急速顶上去，有跳跃的感觉</div>
+<div class="down_con">
+    <p style="color: red;">网站主内容</p>
+    <p>网站主内容</p>
+    <p>网站主内容</p>
+    <p>网站主内容</p>
+    <p>网站主内容</p>
+</div>
+<a href="javascript:;" class="toTop" title="Back to top" id="toTop">TOP</a>
+</body>
+</html>
