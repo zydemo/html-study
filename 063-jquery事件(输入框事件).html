@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>063-jquery事件(输入框事件)</title>
+     <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 光标直接定位到输入框中,和autofocus属性等同
+            $('#txt01').focus();
+            // 元素获得焦点-有光标的时候
+            $('#txt01').focus(function () {
+                console.log('focus:元素获得焦点-有光标的时候');
+            });
+            // 元素失去焦点
+            $('#txt01').blur(function () {
+                console.log('blur元素失去焦点触发：'+$(this).val());
+            });
+            // 输入框的值发生变化,失去焦点触发
+            $('#txt01').change(function () {
+                console.log('change值发生变化,失去焦点触发：'+$(this).val());
+            });
+            // 松开键盘触发，频率高
+            $('#txt01').keyup(function () {
+                console.log('keyup松开键盘触发：'+$(this).val());
+            });
+             // 松开键盘触发，频率高
+            $('#txt01').select(function () {
+                console.log('select触发：'+$(this).val());
+            });
+
+
+
+
+        })
+        
+    </script>
+    
+</head>
+<body>
+
+<input type="text" id="txt01">
+
+</body>
+</html>

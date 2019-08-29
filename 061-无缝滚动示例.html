@@ -10,7 +10,8 @@
             var left = 0;
             var deraction = 2;
             $ul.html($ul.html()+$ul.html());
-            setInterval(function () {
+            var timer = setInterval(move,30);
+            function move() {
                 left -= deraction;
                 if (left < -500) {
                     left = 0;
@@ -19,14 +20,40 @@
                     left = -500;
                 }
                 $ul.css({left:left});
-            },30);
+            }
+            // 正值向左移动
             $('#btn1').click(function () {
-                deraction = 2;
+                deraction = Math.abs(deraction);
+            });
+            // 负值向右移动
+            $('#btn2').click(function () {
+                deraction = (-Math.abs(deraction));
+            });
+            // 鼠标停留，停止滚动
+            $('#slide').mouseover(function () {
+                clearTimeout(timer);
+            });
+            // 鼠标离开，滚动继续
+            $('#slide').mouseout(function () {
+                timer = setInterval(move,30);
+            });
+            // 快速效果
+            $('#btn3').click(function () {
+                deraction *=1.5;
+            });
+            // 正常效果，需要判断点击正常前是向左还是向右
+            $('#btn4').click(function () {
+                if (deraction > 0) {
+                    deraction =2;
+                }else{
+                    deraction = -2;
+                }
+            });
+            // 慢速效果
+            $('#btn5').click(function () {
+                deraction *=0.5;
             });
 
-            $('#btn2').click(function () {
-                deraction = -2;
-            });
         })
     </script>
     <style>
@@ -57,27 +84,37 @@
             font-size: 30px;
             float: left;
         }
+        .slide ul li img{
+            /*height: auto;*/
+            width: 90px;
+        }
         .btns{
             width: 500px;
             height: 50px;
             margin: 10px auto 0;
         }
-
-
     </style>
 </head>
 <body>
     <div class="btns">
-        <input type="button" value="向左" id="btn1">
-        <input type="button" value="向右" id="btn2">
+        <input type="button" value="←向左" id="btn1">
+        <input type="button" value="快速" id="btn3">
+        <input type="button" value="正常" id="btn4">
+        <input type="button" value="慢速" id="btn5">
+        <input type="button" value="向右→" id="btn2">
     </div>
     <div class="slide" id="slide">
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
+            <!--<li>1</li>-->
+            <!--<li>2</li>-->
+            <!--<li>3</li>-->
+            <!--<li>4</li>-->
+            <!--<li>5</li>-->
+            <li><img src="images/061-1.jpg" /></li>
+            <li><img src="images/061-2.jpg" /></li>
+            <li><a href="#" title="061-3"><img src="images/061-3.jpg" /></a></li>
+            <li><img src="images/061-4.jpg" /></li>
+            <li><img src="images/061-5.jpg" /></li>
         </ul>
     </div>
 </body>

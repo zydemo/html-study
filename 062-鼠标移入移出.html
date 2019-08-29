@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>062-鼠标移入移出</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            /*
+            进入子元素时也会触发
+            $('#div1').mouseover(function () {
+                $(this).animate({marginTop:50});
+            });
+            $('#div1').mouseout(function () {
+                $(this).animate({marginTop:100});
+            });
+            */
+
+          /*
+            // 进入子元素不触发,防止鼠标多次移进移出，产生多次动画，可以加stop()
+            $('#div1').mouseenter(function () {
+                $(this).stop().animate({marginTop:50});
+            });
+            $('#div1').mouseleave(function () {
+                $(this).stop().animate({marginTop:100});
+            });
+            */
+
+          // hover简化写法
+            $('#div1').hover(function () {
+                 $(this).stop().animate({marginTop:50});
+            },function () {
+                $(this).stop().animate({marginTop:100});
+            })
+        })
+    </script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #ff6600;
+            margin: 100px auto 0;
+            text-align: center;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: #3c763d ;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="box">
+        <div class="son">子元素</div>鼠标移入移出试试看
+    </div>
+
+</body>
+</html>

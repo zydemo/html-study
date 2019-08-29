@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>064-jquery事件(几种元素加载完毕写法)</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        window.onload = function () {
+
+        };
+        // 等同于上面的写法
+        $(window).load(function () {
+
+        });
+
+       ////////////////////分割线//////////////////////////////////////
+
+        $(document).ready(function () {
+
+        });
+        // 上面ready的简写
+        $(function () {
+
+        });
+
+        $(window).resize(function () {
+            console.log($(window).height()); // 获取可视区高度
+        })
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
