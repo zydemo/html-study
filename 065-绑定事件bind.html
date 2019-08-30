@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>065-绑定事件bind</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 绑定两个事件mouseover和click
+            $('#btn').bind('mouseover click',function () {
+                alert('bind');
+                // $(this).unbind(); // 取消所有绑定事件
+                $(this).unbind('mouseover'); // 取消绑定事件mouseover
+            })
+        })
+
+    </script>
+</head>
+<body>
+<input type="button" value="按钮bind事件示例" id="btn">
+</body>
+</html>

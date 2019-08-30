@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>067-事件冒泡</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $('body').click(function () {
+               alert('body');
+            });
+
+            $('.grandfather').click(function (ev) {
+                console.log(ev.clientX);
+                alert('grandfather');
+
+            });
+
+            $('.father').click(function () {
+                alert('father');
+            });
+
+            $('.son').click(function (ev) {
+                alert('son');
+                ev.stopPropagation();
+            });
+        })
+    </script>
+    <style>
+        .grandfather{
+            width: 300px;
+            height: 300px;
+            background-color: #3c763d;
+        }
+        .father{
+             width: 200px;
+            height: 200px;
+            background-color: gold;
+        }
+        .son{
+             width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            margin-top: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grandfather">
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </div>
+</body>
+</html>
