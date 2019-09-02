@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>068阻止事件冒泡-定时器弹框的出现</title>
+     <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 点击弹窗出现按钮，弹出弹窗
+            $('#btn').click(function () {
+                $('#pop').show();
+                $('#txt').focus(); // 光标直接定位到输入框中,和autofocus属性等同
+                return false;
+            });
+            // 点击关闭弹窗按钮，关闭弹窗
+            $('#close').click(function () {
+                $('#pop').hide();
+                $('#txt').val(''); // 清空输入框的内容
+            });
+            // 点击弹窗以外任意地方都可以关闭弹窗
+            $(document).click(function () {
+                $('#pop').hide();
+                // alert($('#txt').val()); // 获取输入框输入的内容
+                $('#txt').val(''); // 清空输入框的内容
+                return false; // 阻止冒泡
+            });
+            // 防止点击弹窗内部时，弹窗消失
+            $('.pop').click(function () {
+                return false; // 在input输入框父级元素阻止冒泡
+            });
+        })
+
+    </script>
+    <style>
+        .pop_con{
+            background-color: #000;
+            display: none;
+
+        }
+        .pop {
+            width: 400px;
+            height: 300px;
+            background-color: #fff;
+            border: 1px solid #000;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -150px;
+            z-index: 9999; /* 层级关系 */
+        }
+        .mask {/* 灰色背景 */
+            position: fixed;  /* 固定定位 */
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            left: 0;
+            top: 0;
+            opacity: 0.3; /* 透明度 */
+            filter: alpha(opacity=30); /* 兼容IE */
+            z-index: 9990;
+        }
+        .button {
+            width: 70px;
+            position: fixed;
+            left: 50%;
+            top: 54%;
+            margin-left: -35px;
+            margin-top: 75px;
+            background-color: #00a0e9;
+        }
+        h3,p,h1{
+            text-align: center;
+        }
+        input{
+            position: fixed;
+            left: 50%;
+            top: 54%;
+            margin-left: -75px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1>首页</h1>
+<p>正文内容</p>
+
+<input type="button" value="弹窗出现" id="btn" class="button">
+<div class="pop_con" id="pop">
+    <div class="pop">
+        <h3>弹框信息!</h3>
+        <p>弹框正文内容.</p>
+        <p>弹框正文内容.</p>
+        <p>弹框正文内容.</p>
+        <p>弹框正文内容.</p>
+        <input type="text" placeholder="输入内容" id="txt">
+        <input type="button" id="close" value="关闭弹窗" class="button">
+        <!--<a href="#" id="close">这里记得若用a标签，链接要加上#</a>-->
+    </div>
+    <div class="mask"></div>
+</div>
+
+
+</body>
+</html>

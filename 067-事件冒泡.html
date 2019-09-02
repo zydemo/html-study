@@ -22,7 +22,14 @@
 
             $('.son').click(function (ev) {
                 alert('son');
-                ev.stopPropagation();
+                // ev.stopPropagation(); // 阻止冒泡，可以用下面合并简写
+                return false;
+            });
+
+            //阻止右键菜单
+            $(document).contextmenu(function (ev) {
+                // ev.preventDefault(); // 可以用下面合并简写
+                return false;
             });
         })
     </script>

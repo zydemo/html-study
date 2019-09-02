@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>069-事件委托delegate</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 一般绑定事件的写法
+            // $('.list li').click(function () {
+            //     alert($(this).html());
+            // });
+
+            // 事件委托,减少事件绑定次数
+            $('.list').delegate('li','click',function () {
+                alert($(this).html());
+                // $('.list').undelegate(); // 取消事件委托
+            });
+        })
+    </script>
+
+    <style>
+        .list{
+            list-style: none;
+
+        }
+        .list li{
+            height: 30px;
+            background-color: #3c763d;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>事件委托：利用冒泡的原理，把事件加到父级上，通过判断事件来源的子集，执行相应的操作。</div>
+<br />
+ <div>事件委托首先可以极大减少事件绑定次数，提高性能；其次可以让新加入的子元素也可以拥有相同的操作。</div>
+<ul class="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
+</body>
+</html>

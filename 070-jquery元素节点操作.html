@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>070-jquery元素节点操作</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+           var $span = $('<span>span元素</span>');
+           var $p = $('<p>p元素</p>');
+           var $h = $('<h1>标题</h1>');
+           // 在现存元素的内部，从后面插入元素
+            $('#div1').append($span);
+            // $('#div1').append($p);
+
+            // $span.appendTo('#div1');
+            $p.appendTo('#div1');
+
+             // 在现存元素的内部，从前面插入元素
+            // $('#div1').prepend($p);
+            // $span.prependTo('#div1');
+
+            //在现存元素的外部，从后面插入元素
+            // $('#div1').after($p);
+            // $span.insertAfter('#div1');
+
+            // 在现存元素的外部，从前面插入元素
+            // $('#div1').before($h);
+            $h.insertBefore('#div1');
+
+            $p.remove(); // 删除节点
+
+        })
+    </script>
+
+</head>
+<body>
+<div id="div1"></div>
+<div id="div"></div>
+
+</body>
+</html>
