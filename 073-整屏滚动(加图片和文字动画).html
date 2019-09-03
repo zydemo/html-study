@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>073-整屏滚动(加图片和文字动画)</title>
+    <link rel="stylesheet" href="css/073.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery-mousewheel-master/jquery.mousewheel.js"></script>
+    <script>
+        $(function () {
+            var $h = $(window).height();
+            var nowscreen = 0; // 第几屏
+            var len = $('.pages').length; // 长度，也就是共几屏
+            var $points = $('.points li');
+            $('.pages').eq(0).addClass('moving');
+
+            $('.pages').css({height: $h});
+            $(window).mousewheel(function (ev, dat) {
+                if (dat === -1) {
+                    nowscreen++;
+                    if (nowscreen > len - 1) {
+                        nowscreen = len - 1;
+                    }
+                } else {
+                    nowscreen--;
+                    if (nowscreen < 0) {
+                        nowscreen = 0;
+                    }
+                }
+                $('.pages_con').animate({top:-$h*nowscreen},300);
+                $points.eq(nowscreen).addClass('active').siblings().removeClass('active');
+                console.log(nowscreen);
+                $('.pages').eq(nowscreen).addClass('moving').siblings().removeClass('moving');
+
+            })
+
+        })
+    </script>
+</head>
+<body>
+<div class="pages_con">
+
+    <div class="pages page1">
+        <div class="main_con">
+            <div class="left_img"><img src="images/073-1.jpg"></div>
+            <div class="right_info">
+                kjkfljsdl节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯flksfjlksdafnj
+                ndjfd京东客服节快乐的三级分类肯德基发来看看可使肌肤考虑到那里放打客服。
+            </div>
+        </div>
+    </div>
+
+    <div class="pages page2">
+        <div class="main_con">
+            <div class="right_img"><img src="images/073-2.jpg"></div>
+            <div class="left_info">
+                kjkfljsdl节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯flksfjlksdafnj
+                ndjfd京东客服节快乐的三级分类肯德基发来看看可使肌肤考虑到那里放打客服。
+            </div>
+        </div>
+    </div>
+
+    <div class="pages page3">
+        <div class="main_con">
+            <div class="left_img"><img src="images/073-3.jpg"></div>
+            <div class="right_info">
+                kjkfljsdl节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯flksfjlksdafnj
+                ndjfd客服节快乐的三级分类肯德基发来看看可使肌肤考虑到那里放打客服。
+            </div>
+        </div>
+    </div>
+
+    <div class="pages page4">
+        <div class="main_con">
+            <div class="right_img"><img src="images/073-4.jpg"></div>
+            <div class="left_info">
+                kjkfljsdl节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯flksfjlksdafnj
+                ndjfd京东客服节快乐的三级分类肯德基发来看看可使肌肤考虑到那里放打客服。
+            </div>
+        </div>
+    </div>
+
+    <div class="pages page5">
+        <div class="main_con">
+            <div class="center_img"><img src="images/005.jpg"></div>
+        </div>
+    </div>
+</div>
+
+<ul class="points">
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+</body>
+</html>

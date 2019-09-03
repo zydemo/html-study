@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>071-mousewheel示例</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery-mousewheel-master/jquery.mousewheel.js"></script>
+    <script>
+        // https://github.com/jquery/jquery-mousewheel 官网
+        // https://www.hangge.com/blog/cache/detail_1863.html 例子
+        $(function () {
+            $(window).mousewheel(function (ev,dat) {
+                console.log(dat); // -1：滚轮向下，1：滚轮向上
+                if (dat === 1) {
+                    $('#screen').html('dat值为：'+dat+'滚轮向上')
+                }else{
+                    $('#screen').html('dat值为：'+dat+'滚轮向下')
+                }
+            });
+        })
+    </script>
+    <style>
+        #cube {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 10px;
+            left: 65px;
+            background: yellow;
+            opacity: 0.5;
+        }
+        #screen{
+            margin-left: 230px;
+        }
+    </style>
+    <script>
+      $(function() {
+        //使用on监听滚轮事件
+        $('#cube').on('mousewheel', function(event) {
+            //输出滚轮事件响应结果
+            console.log(event.deltaX, event.deltaY, event.deltaFactor);
+            //上下滚动时让鼠标垂直移动
+            var newTop = $(this).position().top - event.deltaY + "px";
+            $(this).css("top", newTop);
+            //左右滚动时让鼠标水平移动
+            var newLeft = $(this).position().left + event.deltaX + "px";
+            $(this).css("left", newLeft);
+        });
+      });
+    </script>
+</head>
+<body>
+<div id="cube">在方块上方通过上下滚动滚轮可以控制方块上下移动</div>
+<div id="screen"></div>
+</body>
+</html>
