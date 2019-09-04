@@ -8,32 +8,43 @@
     <script src="js/jquery-mousewheel-master/jquery.mousewheel.js"></script>
     <script>
         $(function () {
-            var $h = $(window).height();
-            var nowscreen = 0; // 第几屏
-            var len = $('.pages').length; // 长度，也就是共几屏
-            var $points = $('.points li');
-            $('.pages').eq(0).addClass('moving');
+            var $h = $(window).height(); // 获取可视区高度
+            var nowscreen = 0; // 第几屏，0代表第一屏
+            var $points = $('.points li'); // 获取右边的点点
+            var $pages = $('.pages');
+            var len = $pages.length; // 长度，也就是共几屏
+            var timer = null;
 
-            $('.pages').css({height: $h});
+            $pages.eq(0).addClass('moving'); // 刷新默认进入第一屏的时候加载动画
+            $pages.css({height: $h}); // 不同屏幕高度不一样，需要动态调整
+
             $(window).mousewheel(function (ev, dat) {
-                if (dat === -1) {
-                    nowscreen++;
-                    if (nowscreen > len - 1) {
-                        nowscreen = len - 1;
+                // 防止滚轮快速滚动，产生快速滑动的效果，清除前面开始的定时器
+                clearTimeout(timer);
+                // 最新的一次定时器
+                timer = setTimeout(function () {
+                    if (dat === -1) { // 下滑
+                        nowscreen++;
+                        if (nowscreen > len - 1) {
+                            nowscreen = len - 1;
+                        }
+                    } else {
+                        nowscreen--;
+                        if (nowscreen < 0) {
+                            nowscreen = 0;
+                        }
                     }
-                } else {
-                    nowscreen--;
-                    if (nowscreen < 0) {
-                        nowscreen = 0;
-                    }
-                }
-                $('.pages_con').animate({top:-$h*nowscreen},300);
-                $points.eq(nowscreen).addClass('active').siblings().removeClass('active');
-                console.log(nowscreen);
-                $('.pages').eq(nowscreen).addClass('moving').siblings().removeClass('moving');
-
-            })
-
+                    $('.pages_con').animate({top: -$h * nowscreen}, 300); // 修改top值实现滚动效果
+                    $points.eq(nowscreen).addClass('active').siblings().removeClass('active');
+                    $pages.eq(nowscreen).addClass('moving').siblings().removeClass('moving');
+                }, 200)
+            });
+            $points.click(function () {
+                nowscreen = $(this).index();
+                $('.pages_con').animate({top: -$h * nowscreen}, 300);
+                $(this).addClass('active').siblings().removeClass('active');
+                $pages.eq(nowscreen).addClass('moving').siblings().removeClass('moving');
+            });
         })
     </script>
 </head>
@@ -44,8 +55,15 @@
         <div class="main_con">
             <div class="left_img"><img src="images/073-1.jpg"></div>
             <div class="right_info">
-                kjkfljsdl节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯flksfjlksdafnj
-                ndjfd京东客服节快乐的三级分类肯德基发来看看可使肌肤考虑到那里放打客服。
+                <p>沁园春·雪</p>
+                <p>北国风光，千里冰封，万里雪飘。</p>
+                <p>望长城内外，惟余莽莽；大河上下，顿失滔滔。</p>
+                <p>山舞银蛇，原驰蜡象，欲与天公试比高。</p>
+                <p>须晴日，看红装素裹，分外妖娆。</p>
+                <p>江山如此多娇，引无数英雄竞折腰。</p>
+                <p>惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。</p>
+                <p>一代天骄，成吉思汗，只识弯弓射大雕。</p>
+                <p>俱往矣，数风流人物，还看今朝。</p>
             </div>
         </div>
     </div>
@@ -54,8 +72,7 @@
         <div class="main_con">
             <div class="right_img"><img src="images/073-2.jpg"></div>
             <div class="left_info">
-                kjkfljsdl节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯flksfjlksdafnj
-                ndjfd京东客服节快乐的三级分类肯德基发来看看可使肌肤考虑到那里放打客服。
+                北方的风光，千万里冰封冻，千万里雪花飘。远望长城内外，只剩下无边无际白茫茫一片；宽广的黄河上下，顿时失去了滔滔水势。山岭好像银白色的蟒蛇在飞舞，高原上的丘陵好像许多白象在奔跑，它们都想试一试与老天爷比比高。
             </div>
         </div>
     </div>
@@ -64,8 +81,14 @@
         <div class="main_con">
             <div class="left_img"><img src="images/073-3.jpg"></div>
             <div class="right_info">
-                kjkfljsdl节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯flksfjlksdafnj
-                ndjfd客服节快乐的三级分类肯德基发来看看可使肌肤考虑到那里放打客服。
+                <p>要等到晴天的时候，看红艳艳的阳光和白皑皑的冰雪交相</p>
+                <p>辉映，分外美好。</p>
+                <p>江山如此媚娇，引得无数英雄竞相倾倒。</p>
+                <p>只可惜秦始皇、汉武帝，略差文学才华；唐太宗、宋</p>
+                <p>太祖，稍逊文治功劳。</p>
+                <p>称雄一世的人物，成吉思汗，只知道拉弓射大雕。</p>
+                <p>这些人物全都过去了，数一数能建功立业的英雄人物，还</p>
+                <p>要看今天的人们。</p>
             </div>
         </div>
     </div>
@@ -74,15 +97,14 @@
         <div class="main_con">
             <div class="right_img"><img src="images/073-4.jpg"></div>
             <div class="left_info">
-                kjkfljsdl节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯节快乐的三级分类肯flksfjlksdafnj
-                ndjfd京东客服节快乐的三级分类肯德基发来看看可使肌肤考虑到那里放打客服。
+                要等到晴天的时候，看红艳艳的阳光和白皑皑的冰雪交相辉映，分外美好。江山如此媚娇，引得无数英雄竞相倾倒。只可惜秦始皇、汉武帝，略差文学才华；唐太宗、宋太祖，稍逊文治功劳。称雄一世的人物，成吉思汗，只知道拉弓射大雕。
             </div>
         </div>
     </div>
 
     <div class="pages page5">
         <div class="main_con">
-            <div class="center_img"><img src="images/005.jpg"></div>
+            <div class="center_img"><img src="images/walking.png"></div>
         </div>
     </div>
 </div>
