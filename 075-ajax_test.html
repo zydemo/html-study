@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>075-ajax_test</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $.ajax({
+        	url: 'js/jquery-mousewheel-master/package.json',
+        	type: 'GET',
+        	dataType: 'json'
+        })
+        .done(function(data) {
+        	console.log("success");
+        	console.log(data.keywords);
+        })
+        .fail(function() {
+        	console.log("error");
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
