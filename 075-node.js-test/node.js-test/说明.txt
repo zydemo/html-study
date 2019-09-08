@@ -1,0 +1,3 @@
+这个是从github上下载的，可以放静态页(例如：天天生鲜案例)，存放到static目录里即可，但要保留404.html
+https://github.com/guiyangyang/node.js-staticWebsite
+详见自己的csdn博客

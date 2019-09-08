@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>075-ajax_test</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $.ajax({
+        	url: 'data/package.json',
+        	type: 'GET',
+        	dataType: 'json'
+        })
+        .done(function(data) {
+        	console.log("success");
+        	console.log(data.keywords);
+        	for(var i=0;i<data.keywords.length;i++){
+        	    var $li = $('<li>'+ data.keywords[i]+'</li>');
+        	    $('#list').append($li);
+            }
+
+        })
+        .fail(function() {
+        	console.log("error");
+        });
+
+    </script>
+</head>
+<body>
+<ul id="list"></ul>
+</body>
+</html>

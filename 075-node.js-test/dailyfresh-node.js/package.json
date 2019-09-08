@@ -1,0 +1,16 @@
+{
+  "name": "node-website",
+  "version": "1.0.0",
+  "description": "Using node.js to build a static website",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "website"
+  ],
+  "author": "",
+  "license": "ISC"
+}
