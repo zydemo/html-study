@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>078-360公开接口使用jsonp</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        // https://blog.csdn.net/weixin_43182689/article/details/88598353
+        $(function () {
+            $('#input').keyup(function () {
+                var val = $(this).val();
+                $.ajax({
+                    url: 'https://sug.so.360.cn/suggest',
+                    type: 'GET',
+                    dataType: 'jsonp',
+                    data: {
+                        word: val,
+                        // 下面数据最好带上,不然response返回的数据可能存在乱码
+                        encodein: 'utf-8',
+                        encodeout: 'utf-8',
+                        // response返回的数据为json格格式
+                        format: 'json'
+                    }
+                })
+                    .done(function (data) {
+                        $('#list').empty();
+                        for (var i = 0; i < data.result.length; i++) {
+                            var s = data.result[i].word;
+                            var $a = ('<a href="https://www.so.com/s?q=' + s + '">' + s + '</a>');
+                            // $('#list').append($('<li>' + s + '</li>'));
+                            $('#list').append($('<li>' + $a + '</li>'));
+
+                        }
+                    })
+                    .fail(function () {
+                        console.log("error");
+                    });
+            });
+
+        })
+    </script>
+</head>
+<body>
+<h2>078-360公开接口使用jsonp</h2>
+<input type="text" id="input" placeholder="输入关键词so一下">
+<ul id="list"></ul>
+</body>
+</html>

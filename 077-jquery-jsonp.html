@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>077-jquery-jsonp跨域请求，文件名不能加中文</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $.ajax({
+        	url: 'js/076-jsonp.js',
+        	type: 'GET',
+        	dataType: 'jsonp',
+            jsonpCallback:'aa' // 注意这个,自定义的jsonp回调函数名
+        })
+        .done(function(dat) {
+        	alert(dat.name);
+        })
+        .fail(function() {
+        	console.log("error");
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
