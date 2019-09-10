@@ -2,12 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>078-360公开接口使用jsonp</title>
+    <title>078-jsonp使用360搜索公开接口</title>
     <script src="js/jquery-1.12.4.min.js"></script>
     <script>
         // https://blog.csdn.net/weixin_43182689/article/details/88598353
         $(function () {
-            $('#input').keyup(function () {
+            x = ['mp3','m4a','wma'];
+            for(i=0;i<x.length;i++){
+                console.log(x[i]);
+            }
+            var btn = $('#btn');
+            var $input = $('#input');
+            var $list = $('#list');
+            $input.focus(); // 刷新页面光标自动进入输入框中等待输入
+            // 点击查询
+            btn.click(search);
+            function search() {
+                var val = $input.val();
+                window.open("https://www.so.com/s?q=" + val);
+            }
+             // 清空,清空后光标自动进入输入框中等待输入
+            var reset = $('#reset');
+            reset.click(function () {
+                $input.val('');
+                $list.empty();
+                $input.focus();
+            });
+            $input.keyup(function (event) {
+                // 直接按回车调用search查询事件
+                if (event.keyCode === 13) {
+                    search();
+                }
                 var val = $(this).val();
                 $.ajax({
                     url: 'https://sug.so.360.cn/suggest',
@@ -23,26 +48,30 @@
                     }
                 })
                     .done(function (data) {
-                        $('#list').empty();
-                        for (var i = 0; i < data.result.length; i++) {
+                        $list.empty();
+                        // 如果没有输入任何东西则不执行下面的for循环
+                        // if ($input.val().length >0) {
+                            // 下面的for循环内容.......
+                        // }
+                         for (var i = 0; i < data.result.length; i++) {
                             var s = data.result[i].word;
-                            var $a = ('<a href="https://www.so.com/s?q=' + s + '">' + s + '</a>');
+                            var $a = ('<a href="https://www.so.com/s?q=' + s + '" target="_blank">' + s + '</a>');
                             // $('#list').append($('<li>' + s + '</li>'));
-                            $('#list').append($('<li>' + $a + '</li>'));
-
+                            $list.append($('<li>' + $a + '</li>'));
                         }
                     })
                     .fail(function () {
                         console.log("error");
                     });
             });
-
         })
     </script>
 </head>
 <body>
-<h2>078-360公开接口使用jsonp</h2>
-<input type="text" id="input" placeholder="输入关键词so一下">
+<h2>078-jsonp使用360搜索公开接口</h2>
+<input type="text" id="input" placeholder="输入关键词SO一下">
+<input type="button" id="btn" value="SO一下">
+<input type="button" id="reset" value="全部清空">
 <ul id="list"></ul>
 </body>
 </html>
