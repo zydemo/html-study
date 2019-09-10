@@ -1,1 +1,1 @@
-aa({"name":"tom"})
+aa({"name":"tom"});
