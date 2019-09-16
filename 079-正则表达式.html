@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>079-正则表达式</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 第一种定义方法
+            var re = new RegExp('a','ig'); // i:忽略大小写；g:全文搜索，不加的话搜索到第一个结果接停止
+
+            // 第二种
+            var re2 = /a/ig;
+            var str = 'abc';
+            var str2 = 'bc';
+            // alert(re2.test(str)); // true
+            // alert(re2.test(str2)); // false
+
+            var re3 = /\d/;
+            var str3 = '123abc';
+            // alert(re3.test(str3)); // true,默认是懒惰，开头匹配到数字则停止
+
+            // \d 匹配一个数字，即0-9
+            var re4 = /^\d+$/; // +:至少出现一次
+            var str4 = '123a';
+            var str5 = '123';
+            // alert(re4.test(str4)); // false
+            // alert(re4.test(str5)); // true
+
+            // \w 匹配一个单词字符（字母、数字、下划线）
+            var re5 = /^\w+$/;
+            var str6 = 'ab_555c';
+            var str7 = 'ab_5@55c';
+            // alert(re5.test(str6)); // true
+            // alert(re5.test(str7)); // false
+
+            var str8 = '123dfdfd5499dfdf2122sdfds54';
+            var re8 = /\d+/g;
+            console.log(str8.match(re8)); // 提取里面的文字，返回一个数组["123", "5499", "2122", "54"]
+            var re9 = /d/;
+            console.log(str8.search(re9)); // 3
+            console.log(str8.replace(re8,"*")); // *dfdfd*dfdf*sdfds*
+        })
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
