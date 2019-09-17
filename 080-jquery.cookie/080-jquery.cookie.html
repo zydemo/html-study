@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>080-jquery.cookie</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script>
+        $(function () {
+            // 设置cookie
+            $.cookie("mycookie","ok",{expires:1,path:'/'});
+            // 获取cookie
+            var val = $.cookie('mycookie');
+            alert(val);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
