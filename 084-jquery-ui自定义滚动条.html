@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>084-jquery-ui自定义滚动条</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            // 文字总高度
+            var text_height = $('#p1').outerHeight();
+            // 可视区域的高度也就是scroll_bar_con的高度490px
+            var scroll_bar_h = $('.scroll_bar_con').outerHeight();
+            // 获取隐藏部分文字高度
+            var hide = text_height - scroll_bar_h;
+            // 滚动条sroll_bar的高度
+            var sroll_bar_h = $('.sroll_bar').outerHeight();
+            // 滚动条可移动的距离
+            var move = scroll_bar_h - sroll_bar_h;
+            // 只有文字的高度大于可视区域的高度才能移动滚动条
+            if (hide > 0) {
+                $('.sroll_bar').draggable({
+                    axis: 'Y',
+                    containment: 'parent',
+                    opacity: 0.5,
+                    drag: function (ev, ui) {
+                        var ui_top = ui.position.top;
+                        var now_scroll = ui_top / move * hide;
+                        $('.paragraph').css({top: -now_scroll});
+                    }
+                });
+            }
+
+        })
+    </script>
+    <style>
+        .scroll_con {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin: 50px auto 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll_con .paragraph {
+            text-indent: 2em;
+            width: 360px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 10px 20px;
+            font-size: 15px;
+            line-height: 32px;
+        }
+
+        .scroll_con .scroll_bar_con {
+            width: 10px;
+            height: 490px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            /*border: 1px solid red;*/
+
+        }
+
+        .scroll_con .sroll_bar{
+            width: 10px;
+            height: 200px;
+            /*border:1px solid blue;*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #919c9f;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<h2>只有文字多的时候才可以移动滚动条哦</h2>
+<div class="scroll_con">
+    <div class="paragraph">
+        <p id="p1">jQuery UI是以 jQuery 为基础的代码库。包含底层用户交互、动画、特效和可更换主题的可视控件。我们可以直接用它来构建具有很好交互性的web应用程序。jQuery UI是以 jQuery
+            为基础的代码库。包含底层用户交互、动画、特效和可更换主题的可视控件。我们可以直接用它来构建具有很好交互性的web应用程序。jQuery UI是以 jQuery 为 jQuery UI是以 jQuery
+            为基础的代码库。包含底层用户交互、动画、特效和可更换主题的可视控件。我们可以直接用它来构建具有很好交互性的web应用程序。jQuery UI是以 jQuery
+            为基础的代码库。包含底层用户交互、动画、特效和可更换主题的可视控件。我们可以直接用它来构建具有很好交互性的web应用程序。jQuery UI是以 jQuery 为 jQuery UI是以 jQuery
+            为基础的代码库。包含底层用户交互、动画、特效和可更换主题的可视控件。我们可以直接用它来构建具有很好交互性的web应用程序。jQuery UI是以 jQuery
+            为基础的代码库。包含底层用户交互、动画、特效和可更换主题的可视控件。我们可以直接用它来构建具有很好交互性的web应用程序。jQuery UI是以 jQuery 为 jQuery UI是以 jQuery
+            为基础的代码库。包含底层用户交互、动画、特效和可更换主题的可视控件。我们可以直接用它来构建具有很好交互性的web应用程序。jQuery UI是以 jQuery
+            为基础的代码库。包含底层用户交互、动画、特效和可更换主题的可视控件。我们可以直接用它来构建具有很好交互性的web应用程序。jQuery UI是以 jQuery 为 jQuery UI是以 jQuery
+            为基础的代码库。包含底层用户交互、动画、特效和可更换主题的可视控件。我们可以直接用它来构建具有很好交互性的web应用程序。jQuery UI是以 jQuery
+            为基础的代码库。包含底层用户交互、动画、特效和可更换主题的可视控件。我们可以直接用它来构建具有很好交互性的web应用程序。jQuery UI是以 jQuery 为
+        </p>
+    </div>
+    <div class="scroll_bar_con">
+        <div class="sroll_bar"></div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

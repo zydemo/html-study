@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>083-jquery-ui滑动条</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            // $('.box').draggable(); // 可以自由拖动
+            $('.box').draggable({
+                containment:'parent', // 只能在父级元素范围内拖动
+                axis:'x', // 只能沿X轴拖动
+                opacity:0.5, // 拖动的时候变透明
+                drag:function (ev,ui) {
+                    // console.log(ui.position.left);
+                    ui_left = ui.position.left;
+                    // box_width = parseInt($('.box').css("width"));
+                    box_width = $('.box').outerHeight();
+                    con_width = parseInt($('.con').css("width"))-box_width; // 减去box的宽度
+                    $('.slide_count').val("进度："+parseInt(ui_left*100/con_width)+"%");
+                    $('.progress').css('width',ui_left);
+                }
+            });
+
+        })
+    </script>
+    <style>
+        .slider_con{
+            width: 620px;
+            height: 32px;
+            margin: 50px auto 0;
+        }
+        .con{
+            width: 500px;
+            height: 30px;
+            border: 1px solid #000;
+            float: left;
+            position: relative;
+
+        }
+        .con .box{
+            width: 30px;
+            height: 30px;
+            background-color: #ff6600;
+            cursor: pointer;
+            left: 0;
+            top: 0;
+            position: absolute;
+        }
+        .progress{
+            background-color: #728b07;
+            width: 0;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .slide_count{
+            width: 95px;
+            height: 30px;
+            border: 1px solid #233df0;
+            padding: 0;
+            text-align: center;
+            font-size: 16px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="slider_con">
+    <div class="con">
+        <div class="progress"></div>
+        <div class="box"></div>
+    </div>
+    <input type="text" class="slide_count" value="进度：0%">
+</div>
+
+</body>
+</html>

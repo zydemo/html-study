@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>082-localStorage和sessionStorage本地存储</title>
+    <script>
+        window.onload = function () {
+             // cookie，容量最大4k，在同源的http请求时携带传递，有有效期，iPhone的无痕浏览只能用cookie
+            // 设置localStorage，容量为5M或者更大，不会在请求时候携带传递，长期有效，除非人为删除
+            if (!localStorage.myStorage) {
+                localStorage.setItem("myStorage","hello");
+                // 读取
+                alert(localStorage.myStorage);
+            }
+
+            // 设置sessionStorage，容量为5M或者更大，不会在请求时候携带传递，关闭同源窗口后失效
+            if (!sessionStorage.mysessionStorage) {
+                sessionStorage.setItem("mysessionStorage","word");
+                alert(sessionStorage.mysessionStorage);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

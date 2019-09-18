@@ -7,7 +7,7 @@
     <script src="jquery.cookie.js"></script>
     <script>
         $(function () {
-            // 设置cookie
+            // 设置cookie，容量最大4k，在同源的http请求时携带传递，有有效期
             $.cookie("mycookie","ok",{expires:1,path:'/'});
             // 获取cookie
             var val = $.cookie('mycookie');
