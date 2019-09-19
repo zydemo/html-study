@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>087-zeptojs手机滑动删除效果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/zepto-master/src/zepto.min.js"></script>
+    <script src="js/zepto-master/src/touch.js"></script>
+    <script src="js/zepto-master/src/fx.js"></script>
+    <script>
+        $(function () {
+            $('.list li').swipeLeft(function () {
+                $(this).children('a').animate({left:-60});
+                $(this).children('span').animate({right:0});
+                $(this).children('span').click(function () {
+                    $(this).parent().remove();
+                })
+            });
+            $('.list li').swipeRight(function () {
+                $(this).children('a').animate({left:0});
+                $(this).children('span').animate({right:-60});
+            });
+        });
+
+    </script>
+    <style>
+        body,ul{margin:0;padding:0;}
+        .list{
+            list-style: none;
+            margin: 20px auto 0;
+            width: 90%;
+        }
+        .list li{
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+        .list li a{
+            text-decoration: none;
+            color: #333;
+            position: absolute;
+            left: 0;
+        }
+        .list li span{
+            background-color: red;
+            position: absolute;
+            right: -60px;
+            padding: 0 10px;
+            color: #fff;
+        }
+
+
+    </style>
+</head>
+<body>
+<ul class="list">
+    <li><a href="#">内容11111</a><span>删除</span></li>
+    <li><a href="#">内容22222</a><span>删除</span></li>
+    <li><a href="#">内容33333</a><span>删除</span></li>
+    <li><a href="#">内容44444</a><span>删除</span></li>
+</ul>
+
+
+</body>
+</html>

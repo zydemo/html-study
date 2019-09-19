@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>085-jquery-ui自动联想搜索关键词Autocomplete</title>
+    <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+    <link rel="stylesheet" href="css/jquery-ui-1.12.1.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            var list=[
+                "ActionScript",
+                "AppleScript",
+                "C",
+                "C++",
+                "COBOL",
+                "PHP",
+                "Python",
+                "Ruby"
+            ];
+            // https://jqueryui.com/autocomplete/
+            $('#tags').autocomplete({source:list});
+        });
+    </script>
+    <style>
+        .ui-widget{
+            margin: 50px;
+        }
+        .list{
+            margin: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="ui-widget">
+    <h2>搜索候选词</h2>
+    <ul class="list">
+        <li>ActionScript</li>
+        <li>AppleScript</li>
+        <li>C</li>
+        <li>C++</li>
+        <li>COBOL</li>
+        <li>PHP</li>
+        <li>Python</li>
+        <li>Ruby</li>
+    </ul>
+    <label for="tags">标签：</label>
+    <input id="tags" placeholder="请输入以上关键词">
+</div>
+</body>
+</html>

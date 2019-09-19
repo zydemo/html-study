@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>086-zeptojs移动端js事件</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/zepto-master/src/zepto.min.js"></script>
+    <script src="js/zepto-master/src/touch.js"></script>
+    <script>
+        $(function () {
+            var $box = $('.box');
+            var $txt = $('#txt');
+            $box.click(function () {
+               $txt.val("click事件");
+            });
+            $box.tap(function () {
+                $txt.val("短按tap,比click快");
+            });
+            $box.longTap(function () {
+                $txt.val("长按longTap");
+            });
+            $box.swipe(function () {
+                $txt.val("滑动swipe");
+            });
+            $box.swipeUp(function () {
+                $txt.val("上滑动swipe");
+            });
+            $box.swipeDown(function () {
+                $txt.val("下滑动swipe");
+            });
+            $box.swipeLeft(function () {
+                $txt.val("左滑动swipe");
+            });
+            $box.swipeRight(function () {
+                $txt.val("右滑动swipe");
+            });
+        });
+    </script>
+    <style>
+        .box{
+            height: 300px;
+            width: 300px;
+            background-color: #ff6600;
+            margin-bottom: 50px;
+        }
+        .box .con{
+            text-align: center;
+            line-height: 300px;
+        }
+        #txt{
+            color: #f01400;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="con">手机模式下操作</div>
+</div>
+<label for="txt">touch模块事件：</label>
+<input type="text" value="" id="txt">
+</body>
+</html>
