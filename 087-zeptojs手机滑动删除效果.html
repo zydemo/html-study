@@ -10,40 +10,53 @@
     <script>
         $(function () {
             $('.list li').swipeLeft(function () {
-                $(this).children('a').animate({left:-60});
-                $(this).children('span').animate({right:0});
-                $(this).children('span').click(function () {
-                    $(this).parent().remove();
+                $(this).children('a').animate({left: -60});
+                $(this).children('span').animate({right: 0});
+                // $(this).children('span').click(function () {
+                //     $(this).parent().remove();
+                // })
+                $('.list span').click(function () { // 先压扁每一行再删除
+                    $(this).parent().animate({height: 0}, function () {
+                        $(this).remove();
+                    })
                 })
             });
             $('.list li').swipeRight(function () {
-                $(this).children('a').animate({left:0});
-                $(this).children('span').animate({right:-60});
+                $(this).children('a').animate({left: 0});
+                $(this).children('span').animate({right: -60});
             });
+
         });
 
     </script>
     <style>
-        body,ul{margin:0;padding:0;}
-        .list{
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .list {
             list-style: none;
             margin: 20px auto 0;
             width: 90%;
         }
-        .list li{
+
+        .list li {
             height: 40px;
             line-height: 40px;
             border-bottom: 1px solid #ddd;
             position: relative;
             overflow: hidden;
         }
-        .list li a{
+
+        .list li a {
             text-decoration: none;
             color: #333;
             position: absolute;
             left: 0;
         }
-        .list li span{
+
+        .list li span {
             background-color: red;
             position: absolute;
             right: -60px;
@@ -56,10 +69,22 @@
 </head>
 <body>
 <ul class="list">
-    <li><a href="#">内容11111</a><span>删除</span></li>
-    <li><a href="#">内容22222</a><span>删除</span></li>
-    <li><a href="#">内容33333</a><span>删除</span></li>
-    <li><a href="#">内容44444</a><span>删除</span></li>
+    <li>
+        <a href="#">内容11111</a>
+        <span>删除</span>
+    </li>
+    <li>
+        <a href="#">内容22222</a>
+        <span>删除</span>
+    </li>
+    <li>
+        <a href="#">内容33333</a>
+        <span>删除</span>
+    </li>
+    <li>
+        <a href="#">内容44444</a>
+        <span>删除</span>
+    </li>
 </ul>
 
 
