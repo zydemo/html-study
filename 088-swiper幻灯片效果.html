@@ -29,7 +29,17 @@
             });
         })
     </script>
-
+    <style>
+        :root {--swiper-navigation-size:120px} /* 更改左右箭头大小 */
+        .swiper-pagination-bullet { /* 更改原点大小 */
+            width: 8px;
+            height: 8px;
+            display: inline-block;
+            border-radius: 100%;
+            background: #000;
+            opacity: .2
+        }
+    </style>
 </head>
 <body>
 <div class="swiper-container">
@@ -42,6 +52,5 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
 </div>
-
 </body>
 </html>
