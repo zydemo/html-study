@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>089-手机整屏滚动</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/089-main.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script>
+        $(function () {
+            $('.number').val("第1页");
+            setTimeout(function () {
+                $('.p1').addClass('moving');
+            },0);
+            var myswiper = new Swiper('.swiper-container',{
+                direction:'vertical',
+                pagination:{ // 使用分页器导航
+                    el:'.swiper-pagination',
+                    clickable: true
+                },
+                on:{
+                    slideChangeTransitionEnd:function () { // 回调函数，swiper从一个slide过渡到另一个slide结束时执行
+                        // console.log(this);
+                        var index = this.activeIndex;
+                        $('.swiper-slide').removeClass('moving').eq(index).addClass('moving');
+                        $('.number').val("第"+(index+1)+"页");
+                    }
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide p1">
+            <h1>页面标题一</h1>
+            <p>页面正文内容</p>
+        </div>
+        <div class="swiper-slide p2">
+            <h1>页面标题二</h1>
+            <p>页面正文内容</p>
+        </div>
+        <div class="swiper-slide p3">
+            <h1>页面标题三</h1>
+            <p>页面正文内容</p>
+        </div>
+        <div class="swiper-slide p4">
+            <h1>页面标题四</h1>
+            <p>页面正文内容</p>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+<div class="up_icon"></div>
+<input type="text" class="number">
+</body>
+</html>
