@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>090-bootstrap栅格系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        /* class属性包含col-的所有div元素采用的样式 */
+        div[class*="col-"] {
+            background-color: gold;
+            height: 50px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid" style="background-color: #ff6600">流体布局的容器</div>
+<br>
+<div class="container" style="background-color: #ff6600">固定宽度的容器</div>
+<br>
+<div class="container" style="background-color: #00dc50">以下为bootstrap栅格系统</div>
+<br >
+<div class="container" style="background-color: #7bdcbf;font-size: 15px">bootstrap将页面横向分为12等分，
+    按照12等分定义了适应不同宽度等分的样式类，这些样式类组成了一套响应式、移动设备优先的流式栅格系统</div>
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">col-lg-3屏幕尺寸小于1200上下排列</div>
+        <div class="col-lg-3">col-lg-3</div>
+        <div class="col-lg-3">col-lg-3</div>
+        <div class="col-lg-3">col-lg-3</div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-4">col-md-4屏幕尺寸小于992上下排列</div>
+        <div class="col-md-4">col-md-4</div>
+        <div class="col-md-4">col-md-4</div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-3">col-sm-3屏幕尺寸小于768上下排列</div>
+        <div class="col-sm-6">col-sm-6</div>
+        <div class="col-sm-3">col-sm-3</div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-xs-7">col-xs-7随着屏幕尺寸调整排列不变只会折行</div>
+        <div class="col-xs-1">col-xs-1</div>
+        <div class="col-xs-4">col-xs-4</div>
+    </div>
+</div>
+</body>
+</html>
