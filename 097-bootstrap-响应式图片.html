@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>097-bootstrap-响应式图片</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        div[class*="col-"]{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>bootstrap-响应式图片img-responsive示例</h2>
+    <div class="row">
+        <!-- 响应式图片：如果容器的宽度比图片大，图片宽度就等于自己的宽度
+                        如果容器的宽度比图片小，图片的宽度就等于容器的宽度减去左右padding值
+         -->
+        <div class="col-md-3">
+            <img src="images/icons.png" class="img-responsive center-block">
+        </div>
+        <div class="col-md-9">
+            <img src="images/058-3.jpg" class="img-responsive center-block">
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="container">
+    <div style="font-size: 17px">图片形状分别为：
+         <ul>
+            <li>img-rounded圆角形式</li>
+            <li>img-circle椭圆形式</li>
+            <li>img-thumbnail缩略图形式</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="images/058-2.jpg" class="img-responsive center-block img-rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="images/058-3.jpg" class="img-responsive center-block img-circle">
+        </div>
+        <div class="col-md-4">
+            <img src="images/058-4.jpg" class="img-responsive center-block img-thumbnail">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

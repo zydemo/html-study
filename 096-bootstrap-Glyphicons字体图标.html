@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>096-bootstrap-Glyphicons字体图标</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        /* 可以直接修改默认样式，也可以自己单独添加属性设置样式，这样更好 */
+        .glyphicon-music{
+            color: #f01400;
+            font-size: 25px;
+        }
+        .edit{
+            color: #ff6600;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<br>
+<div class="container" style="background-color: #55a8ea">为了设置正确的内补（padding），务必在图标和文本之间添加一个空格</div>
+<div class="container">
+    <h2>Glyphicons字体图标,需要下载fonts文件夹下的字体</h2>
+    <a href="https://v3.bootcss.com/components/#glyphicons" class="btn btn-link btn-lg" target="_blank">Glyphicons字体图标链接地址</a>
+    <br>
+    <button class="btn btn-primary">
+        <span class="glyphicon glyphicon-music"></span> 音乐
+    </button>
+
+    <button class="btn btn-warning btn-lg">警告 <span class="glyphicon glyphicon-info-sign"></span></button>
+    <br>
+    <br>
+    <p><span class="glyphicon glyphicon-star edit"></span> 这是一个段落</p>
+</div>
+</body>
+</html>
