@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>098-bootstrap导航条-巨幕-面包屑</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        $(function () {
+            $('.navbar-nav li a').click(function () {
+                $(this).addClass("active docs-active").parent().siblings().children('a').removeClass("active docs-active");
+            })
+        })
+    </script>
+    <style>
+        .navbar-header img{
+            margin: -10px 10px 0 0;
+            height: 40px;
+        }
+        .docs-nav{
+            background-color: #1d365d;
+        }
+        .navbar-nav li a:hover{
+            background-color: #ff6600 !important;
+        }
+        .docs-active{
+            background-color: #4caf50 !important;
+            color: #fff !important;
+        }
+        .docs-header{
+            background-color: #1d365d;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<!--navbar-inverse 声明反白的导航条样式-->
+<!--navbar-fixed-top 固定到顶部的导航条-->
+<!--navbar-static-top 去掉导航条的圆角-->
+<div class="navbar navbar-inverse navbar-fixed-top navbar-static-top docs-nav">
+    <div class="container">
+        <!--navbar-header 申明logo的容器-->
+        <div class="navbar-header">
+            <!--菜单伸缩效果-将要伸缩的内容装到里面-->
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#togglemenu">
+                <!--伸缩后展现的三个短小横条-->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--navbar-brand 针对logo等固定内容的样式-->
+            <a href="#" class="navbar-brand"><img src="images/074-logo.png" alt=""></a>
+        </div>
+    <!--菜单伸缩效果-要伸缩的内容-->
+    <div class="collapse navbar-collapse" id="togglemenu">
+        <!-- nav navbar-nav:定义导航条中的菜单 -->
+        <ul class="nav navbar-nav">
+            <li><a href="#" class="active docs-active">首页</a></li>
+            <li><a href="#">企业简介</a></li>
+            <li><a href="#">产品介绍</a></li>
+            <li><a href="#">行业动态</a></li>
+        </ul>
+        <!--navbar-form 定义导航条中的表单-->
+        <form class="navbar-form navbar-right">
+            <!--form-group 表单组、包括表单文字和表单控件-->
+            <div class="form-group">
+                <!--input-group 表单控件组-->
+                <div class="input-group">
+                    <!--form-control 文本输入框、下拉列表控件样式-->
+                    <input type="text" class="form-control">
+                    <!--input-group-btn 表单控件组物件为按钮的样式-->
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+        <!--navbar-btn 定义导航条中的按钮-->
+        <!--<button class="btn btn-primary navbar-btn">按钮操作</button>-->
+    </div>
+</div>
+<br>
+<!--巨幕（banner）-->
+<div class="jumbotron docs-header">
+    <div class="container">
+        <h1>巨幕（banner）效果</h1>
+        <p>It's our wits that make us men.</p>
+    </div>
+</div>
+
+<!--路径导航-面包屑-->
+<ol class="breadcrumb">
+    您的位置：
+    <li><a href="#">首页</a></li>
+    <li><a href="#">Python</a></li>
+    <li><a href="#">HTML前端</a></li>
+    <li class="active">正文</li>
+</ol>
+
+
+</body>
+</html>
