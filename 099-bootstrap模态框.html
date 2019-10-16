@@ -7,15 +7,84 @@
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                // 可以在程序执行完特定任务以后执行
+                // 可以同时弹出三个,弹出的顺序跟此处顺序无关，和body里面放的顺序有关
+                showmodal();
+                $('#Mymodal01 .modal-title').html("模态框头部<span style='color: red;'>(2s后自动关闭)</span>");
+                // $('#Mymodal01 .modal-title').text("模态框头部(2s后自动关闭)");
+                // $('#Mymodal02').modal('show');
+                // $('#Mymodal03').modal('show');
+                // 2秒后自动隐藏模态框
+                setTimeout(hidemodal, 2000);
+            });
+            // 显示模态框
+            function showmodal() {
+                $('#Mymodal01').modal('show');
+            }
+            // 隐藏模态框
+            function hidemodal() {
+                $('#Mymodal01').modal('hide');
+                $('#Mymodal01 .modal-title').html("模态框头部");
+            }
+            showmodal();
+            // 倒计时
+            function countDown() {
+               var $time = $('#Time');
+                if($time.html() === '1'){
+                    // window.location.href=("http://www.baidu.com");
+                    hidemodal();
+                }else{
+                    $time.html($time.html()-1);
+                }
+            }
+            setInterval(countDown,1000);
+        })
+    </script>
 </head>
 <body>
 <div class="container">
     <h2>模态框（Modal）是覆盖在父窗体上的子窗体。</h2>
     <!-- 按钮：用于打开模态框 -->
-    <button class="btn btn-primary" data-toggle="modal" data-target="#Mymodal">弹出模态框</button>
+    <button class="btn btn-success" id="btn1">JS控制模态框</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#Mymodal01">弹出大尺寸模态框</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#Mymodal02">弹出正常尺寸模态框</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#Mymodal03">弹出小尺寸模态框</button>
 </div>
-<!-- 模态框 -->
-<div class="modal fade" id="Mymodal">
+<!-- 大尺寸模态框 -->
+<div class="modal fade" id="Mymodal01">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <!--关闭按钮：显示×形状-->
+                <button class="close" data-dismiss="modal" title="关闭">&times;</button>
+                <h4 class="modal-title">模态框头部(<span id="Time" style="color: red;">5</span><span>s后自动关闭)</span></h4>
+            </div>
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                模态框主体内容.....
+                <br>
+                <br>
+                模态框主体内容.....
+                <br>
+                <br>
+                模态框主体内容.....
+            </div>
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button class="btn btn-primary">确定</button>
+                &nbsp;
+                <button class="btn btn-warning" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 正常尺寸模态框 -->
+<div class="modal fade" id="Mymodal02">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- 模态框头部 -->
@@ -38,6 +107,28 @@
     </div>
 </div>
 
-
+<!-- 小尺寸模态框 -->
+<div class="modal fade" id="Mymodal03">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <!--关闭按钮：显示×形状-->
+                <button class="close" data-dismiss="modal" title="关闭">&times;</button>
+                <h4 class="modal-title">模态框头部</h4>
+            </div>
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                模态框主体内容.....
+            </div>
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button class="btn btn-primary">确定</button>
+                &nbsp;
+                <button class="btn btn-warning" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

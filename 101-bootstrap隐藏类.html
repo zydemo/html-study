@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>101-bootstrap隐藏类</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        div[class*="col-"]{
+            border: 1px solid #000;
+            height: 50px;
+            background-color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>隐藏类</h1>
+    <div class="col-lg-3">col-lg-3</div>
+    <div class="col-lg-3">col-lg-3</div>
+    <div class="col-lg-3">col-lg-3</div>
+    <div class="col-lg-3 hidden-md hidden-sm hidden-xs">只有屏幕尺寸大于1200才显示</div>
+</div>
+</body>
+</html>

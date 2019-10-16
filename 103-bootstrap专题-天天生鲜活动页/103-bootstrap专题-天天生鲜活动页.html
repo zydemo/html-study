@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>103-bootstrap专题-天天生鲜活动页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <!--菜单伸缩效果-将要伸缩的内容装到里面-->
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#fruit_menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--logo-->
+            <a href="#" class="navbar-brand"><img class="logo" src="images/103-logo.png" alt="logo" title="天天生鲜"></a>
+        </div>
+        <!--菜单伸缩效果-要伸缩的内容-->
+        <div class="collapse navbar-collapse" id="fruit_menu">
+            <!-- nav navbar-nav:定义导航条中的菜单 -->
+            <ul class="nav navbar-nav">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">推荐商品</a></li>
+                <li><a href="#">手机生鲜</a></li>
+                <li><a href="#">抽奖</a></li>
+            </ul>
+            <!--navbar-form 定义导航条中的表单 搜索处-->
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" title="搜索">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--巨幕（banner）-->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1">
+                <div class="banner_title"><img class="img-responsive" src="images/banner_title.png" alt="天天生鲜水果节"></div>
+                <h3 class="active_title">水果节介绍</h3>
+                <p class="active_detail">清凉一下 缤纷水果节 水果PARTY ADD RELATED TITLE WORDS 策划思路 盛夏时节,针对老业主、新业主及到访客户,特此举办此次
+                    “清凉一下 缤纷水果节”。清凉一下 缤纷水果节 水果PARTY ADD RELATED TITLE WORDS 策划思路 盛夏时节,针对老业主、新业主及到访客户,特此举办此次 “清凉一下
+                    缤纷水果节”。</p>
+            </div>
+            <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-1 hidden-sm hidden-xs">
+                <!--img-responsive响应式图片-->
+                <img class="img-responsive fruit_basket" src="images/fruit.png" alt="水果篮">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h3 class="text-center active_pic_title">活动图片</h3>
+    <p class="text-center active_pic_detail">清凉一下 缤纷水果节 水果PARTY ADD RELATED TITLE WORDS 策划思路 盛夏时节,针对老业主、新业主及到访客户,特此举办此次
+        “清凉一下 缤纷水果节”。清凉一下 缤纷水果节 水果PARTY ADD RELATED TITLE WORDS。</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <a href="#">
+                    <img class="img-responsive pic" src="images/active01.jpg" alt="水果节" title="水果节">
+                </a>
+                <h4 class="pic_detail_title">水果节</h4>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <a href="#">
+                    <img class="img-responsive pic" src="images/active01.jpg" alt="水果节" title="水果节">
+                </a>
+                <h4 class="pic_detail_title">水果节</h4>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <a href="#">
+                    <img class="img-responsive pic" src="images/active01.jpg" alt="水果节" title="水果节">
+                </a>
+                <h4 class="pic_detail_title">水果节</h4>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <a href="#">
+                    <img class="img-responsive pic" src="images/active01.jpg" alt="水果节" title="水果节">
+                </a>
+                <h4 class="pic_detail_title">水果节</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="common_title">
+        <h3 class="pull-left">推荐商品</h3>
+        <a href="#" class="pull-right">更多 &gt;&gt;</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row goods_list">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 goods_list_show">
+            <a href="#">
+                <img class="img-responsive" src="images/good_pic.jpg" alt="进口草莓" title="进口草莓">
+            </a>
+            <h4 class="goods_name"><a href="#">进口草莓</a></h4>
+            <p class="goods_price">
+                ¥
+                <em>25.00</em>
+                /500g
+            </p>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="footer">
+        <div class="footer_text">
+            <p>
+                <a href="#">关于我们 | </a>
+                <a href="#">关于我们 | </a>
+                <a href="#">关于我们 | </a>
+                <a href="#">关于我们</a>
+            </p>
+            <p>
+                Copyright © 2019-2019 ZY
+            </p>
+            <p>
+                电话：010-100000 &nbsp;京ICP备88888号-1
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
