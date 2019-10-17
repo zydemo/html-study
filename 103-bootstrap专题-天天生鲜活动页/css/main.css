@@ -55,6 +55,11 @@ a:link {
     border-color: #fff;
 }
 
+.navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover {
+    color: #24ff96;
+    background-color: #406834;
+}
+
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
     background-color: pink;
 }
@@ -247,4 +252,11 @@ a:hover {
 
 .footer_text a:hover {
     color: #24ff96;
+}
+
+/*android手机键盘弹起会挡住输入框，暂时调小解决*/
+@media (max-width: 768px) {
+    .nav>li{
+        height: 30px;
+    }
 }
