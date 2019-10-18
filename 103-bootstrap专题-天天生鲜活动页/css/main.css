@@ -55,7 +55,7 @@ a:link {
     border-color: #fff;
 }
 
-.navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover {
+.navbar-inverse .navbar-nav>li>a:hover {
     color: #24ff96;
     background-color: #406834;
 }
@@ -129,6 +129,9 @@ a:link {
     color: #fff;
     font-size: 12px;
     margin: 15px 10px 0 0;
+}
+.common_title a:hover{
+    color: #24ff96;
 }
 /*a标签内容超出以后隐藏并且显示省略点*/
 .goods_list_show .goods_name a {

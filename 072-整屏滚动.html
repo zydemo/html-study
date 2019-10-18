@@ -43,7 +43,7 @@
                 startTime = new Date().getTime();
                 var delta = event.detail || (-event.wheelDelta);
                 //mousewheel事件中的 “event.wheelDelta” 属性值：返回的如果是正值说明滚轮是向上滚动
-                //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向上滚动
+                //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向下滚动
                 if ((endTime - startTime) < -1000) {
                     if (delta > 0 && parseInt(main.offsetTop) > -(hei * 3)) {
                         //向下滚动
