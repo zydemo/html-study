@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>014-伪类及伪元素选择器</title>
+    <style>
+        .list {
+            list-style: none;
+            margin: 40px 0;
+            line-height: 40px;
+        }
+        /*组选择器*/
+        .box1, .box2, .box3 {
+            font-size: 20px;
+        }
+
+        /*伪类选择器*/
+        .list a:hover {
+            color: gold;
+            text-decoration: none;
+        }
+
+        /*伪元素选择器，内容不能被选中*/
+        .box1:before {
+            content: '增加前面文字 ';
+            color: blue;
+        }
+
+        .box2:after {
+            content: ' 增加后面文字';
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="list">
+    <li><a href="#">新闻标题</a></li>
+    <li><a href="#">新闻标题</a></li>
+    <li><a href="#">新闻标题</a></li>
+</ul>
+
+<div class="box1">第1个div</div>
+<div class="box2">第2个div</div>
+<div class="box3">第3个div</div>
+
+
+</body>
+</html>

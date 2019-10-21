@@ -4,7 +4,7 @@
 	text-align: center;
 	text-decoration: none;
 	font-weight: bold;
-	font-family: 'Microsoft Yahei';
+	font-family: "Microsoft Yahei", Arial, sans-serif;
 	text-indent:40px;
 }
 h3{
@@ -19,7 +19,7 @@ h3{
 /*id选择器*/
 #div2{
 	text-align: left;
-	color: black;
+	/*color: black;*/
 	font-weight: normal;
 	color: #020101;
 	font-style: italic;
