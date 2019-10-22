@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>margin-top塌陷解决</title>
 	<style type="text/css">
 		.cov{
@@ -12,7 +13,6 @@
 			/*2、外部盒子设置 overflow:hidden*/
 			/*overflow: hidden;*/
 
-			
 		}
 		.box{
 			width: 100px;
@@ -26,19 +26,13 @@
 			content: '';
 			display: table;
 		}
-
-
 	</style>
 	
 </head>
 <body>
-	
 	<!-- <h2 align="center">margin-top塌陷解决</h2> -->
 	<div class="cov clearfix">
 		<div class="box"></div>
 	</div>
-	
-
-	
 </body>
 </html>

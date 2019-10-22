@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>018-内联元素</title>
+    <style>
+        .con,.con2{
+            border: 1px solid #000;
+            height: 100px;
+            width: 400px;
+            margin: 40px auto;
+            line-height: 40px;
+            /*解决内联元素间隙*/
+            font-size: 0;
+        }
+        .con a{
+            background-color: #ff6600;
+            /*宽高不起作用*/
+            /*height: 300px;*/
+            /*width: 100px;*/
+
+            /*margin-left: 20px;*/
+            /*margin-right: 20px;*/
+
+            /*margin上下不支持*/
+            /*margin-top: 20px;*/
+            /*margin-bottom: 20px;*/
+
+            /*padding上下不支持*/
+            padding: 0 20px;
+            font-size: 20px;
+        }
+        .con2 a{
+            font-size: 20px;
+            background-color: #55a8ea;
+        }
+        .con2{
+            /*父元素用text-align属性设置子元素水平对齐方式*/
+            text-align: center;
+            /*值等于高度，父元素用line-height属性值设置垂直对齐方式*/
+            line-height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<h3>内联元素</h3>
+<div class="con">
+    <a href="#">第一个a标签长度由自己内容决定</a>
+    <a href="#">第二个a标签</a>
+    <a href="#">第三个a标签</a>
+    <a href="#">第四个a标签</a>
+</div>
+
+<div class="con2">
+    <a href="#">第一个a标签长度由自己内容决定</a>
+</div>
+<br>
+<strong>内联元素</strong>
+<br>
+<div style="text-indent: 20px">
+    也可以称为行内元素，布局中常用的标签如：a、span、em、b、strong、i等等都是内联元素，它们在布局中的行为：
+</div>
+<ol>
+    <li>支持部分样式（不支持宽、高、margin上下、padding上下）</li>
+    <li>宽高由内容决定</li>
+    <li>盒子并在一行</li>
+    <li>代码换行，盒子之间会产生间距</li>
+    <li>子元素是内联元素，父元素可以用text-align属性设置子元素水平对齐方式，用line-height属性值设置垂直对齐方式</li>
+</ol>
+<strong>解决内联元素间隙的方法 </strong>
+<ol>
+    <li>去掉内联元素之间的换行</li>
+    <li>将内联元素的父级设置font-size为0，内联元素自身再设置font-size</li>
+</ol>
+</body>
+</html>
