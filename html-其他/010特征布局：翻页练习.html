@@ -1,108 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>010特征布局：翻页练习</title>
-	<style type="text/css">
-
-		.page{
-			width: 958px;
-			height: 40px;
-			border: 1px solid #000;
-			margin: 30px auto 0;
-			text-align: center;
-			font-size: 0;
-			/*padding: 0;*/
-		}
-		.page a{
-			display: inline-block;
-			/*文字设置padding不能用line-height垂直居中*/
-			padding: 5px 10px;
-			font-family: 'Microsoft Yahei';
-			font-size: 15px;
-			text-decoration: none;
-			background-color: gold;
-			/*垂直居中*/
-			margin: 5px 5px;
-			color: #333;
-		}
-
-		.page span{
-			display: inline-block;
-			font-size: 15px;
-		}
-		.page a:hover{
-			background-color: red;
-			color: blue;
-		}
-
-		.menu{
-			height: 40px;
-			width:958px;
-			font-size: 0;
-			text-align: center;
-			/*list-style: none;*/
-			border: 1px solid #000;
-			margin: 50px auto 0;
-			padding: 0;
-			/*文字没有设置padding所以可以用line-height垂直居中*/
-			line-height: 40px;
-
-		}
-		.menu li{
-			display: inline-block;
-			font-size: 14px;
-			/*background-color: gold;*/
-		}
-		.menu li a{
-			text-decoration: none;
-			font-family: 'Microsoft Yahei';
-			color: #333;
-		}
-		.menu .line{
-			color: #333;
-			margin: 0 20px;
-		}
-		.menu li a:hover{
-			color: red;
-		}
-
-	</style>
-
-	
+    <meta charset="UTF-8">
+    <title>010特征布局：翻页练习</title>
+    <style>
+        /*第一个菜单*/
+        .list{
+            width: 958px;
+            height: 40px;
+            border: 1px solid #333;
+            text-align: center;
+            margin: 30px auto;
+            font-size: 0;
+        }
+        .list a{
+            display: inline-block;
+            text-decoration: none;
+            background-color: gold;
+            /*文字设置padding不能用line-height垂直居中*/
+            padding: 5px 10px;
+            margin: 5px;
+            font-size: 15px;
+        }
+        .list span{
+            font-size: 15px;
+        }
+        .list a:hover{
+            color: #fff;
+            background-color: red;
+        }
+        /*第二个菜单*/
+        .menu{
+            width: 958px;
+            height: 40px;
+            border: 1px solid#333;
+            margin: 30px auto 0;
+            font-size: 0;
+            text-align: center;
+            /*ul自带样式padding*/
+            padding: 0;
+        }
+        .menu li{
+            display: inline-block;
+            margin: 5px;
+            background-color: gold;
+            font-size: 15px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .menu li:hover{
+            background-color: red;
+        }
+        .menu li a{
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+        .menu li a:hover{
+            color: #fff;
+        }
+        .menu .dot{
+            background-color: #fff;
+            margin: 0;
+        }
+        .menu .dot:hover{
+            background-color: #fff;
+        }
+        .menu .dot span:hover{
+            color: #000;
+        }
+        /*第三个菜单*/
+        .con{
+            width: 958px;
+            height: 40px;
+            border: 1px solid #000;
+            margin: 50px auto 0;
+            padding: 0;
+            font-size: 0;
+            text-align: center;
+            /*文字没有设置padding所以可以用line-height垂直居中*/
+            line-height: 40px;
+        }
+        .con li{
+            display: inline-block;
+            font-size: 14px;
+        }
+        .con li a{
+            text-decoration: none;
+            color: #333;
+        }
+        .line{
+            color: #333;
+            margin: 0 20px;
+        }
+        .con li a:hover{
+            color: #f01400;
+        }
+    </style>
 </head>
 <body>
-	
-	<h2 align="center">010特征布局：翻页练习</h2>
-	<!-- 如果div换成ul上面的padding还要写成0,因为ul自带样式 -->
-	<div class="page">
-		<a href="">上一页</a>
-		<a href="">1</a>
-		<a href="">2</a>
-		<a href="">3</a>
-		<a href="">4</a>
-		<span>...</span>
-		<a href="">17</a>
-		<a href="">18</a>
-		<a href="">19</a>
-		<a href="">20</a>
-		<a href="">下一页</a>		
-	</div>
+    <h2 align="center">010特征布局：翻页练习</h2>
+    <!-- 如果div换成ul上面的padding还要写成0,因为ul自带样式，如下面第二个例子 -->
+    <!--第一个菜单-->
+    <div class="list">
+        <a href="">上一页</a>
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <span>...</span>
+        <a href="">17</a>
+        <a href="">18</a>
+        <a href="">19</a>
+        <a href="">20</a>
+        <a href="">下一页</a>
+    </div>
+    <!--第二个菜单-->
+    <ul class="menu">
+        <li><a href="">上一页</a></li>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li class="dot"><span>...</span></li>
+        <li><a href="">17</a></li>
+        <li><a href="">18</a></li>
+        <li><a href="">19</a></li>
+        <li><a href="">20</a></li>
+        <li><a href="">下一页</a></li>
+    </ul>
+    <!--第三个菜单-->
+    <ul class="con">
+        <li><a href="">首页</a></li>
+        <li class="line">|</li>
+        <li><a href="">企业介绍</a></li>
+        <li class="line">|</li>
+        <li><a href="">程序开发</a></li>
+        <li class="line">|</li>
+        <li><a href="">网络营销</a></li>
+        <li class="line">|</li>
+        <li><a href="">企业介绍</a></li>
+        <li class="line">|</li>
+        <li><a href="">企业介绍</a></li>
+        <li class="line">|</li>
+        <li><a href="">企业介绍</a></li>
+    </ul>
 
-	<ul class="menu">
-		<li><a href="">首页</a></li>
-		<li class="line">|</li>
-		<li><a href="">网站建设</a></li>
-		<li class="line">|</li>
-		<li><a href="">程序开发</a></li>
-		<li class="line">|</li>
-		<li><a href="">网络营销</a></li>
-		<li class="line">|</li>
-		<li><a href="">网络营销</a></li>
-		<li class="line">|</li>
-		<li><a href="">网络营销</a></li>
-		<li class="line">|</li>
-		<li><a href="">网络营销</a></li>
-	</ul>
-	
 </body>
 </html>
