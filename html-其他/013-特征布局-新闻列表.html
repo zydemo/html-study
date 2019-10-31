@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>013-特征布局-新闻列表</title>
+    <style>
+        .news_list h3{
+            border-bottom: 1px solid #ddd;
+            /*h3自带margin属性，需要去掉*/
+            margin: 0 auto;
+            height: 49px;
+            width: 560px;
+        }
+        .news_list h3 span{
+            border-bottom: 2px solid red;
+            display: inline-block;
+            height: 48px;
+            padding: 0 15px;
+            line-height: 50px;
+            color: #000;
+            /*定位 考虑兼容性*/
+            position: relative;
+        }
+        .news_list{
+            border: 1px solid #000;
+            width: 600px;
+            height: 290px;
+            margin: 50px auto 0;
+        }
+        .news_list li{
+            border-bottom: 1px solid #777676;
+            height: 39px;
+        }
+        .news_list li span{
+            float: right;
+            font: 14px/38px 'Microsoft Yahei';
+            height: 38px;
+        }
+        .news_list li a{
+            text-decoration: none;
+            float: left;
+            height: 40px;
+            font: 16px/40px 'Microsoft Yahei';
+            color: #000;
+        }
+        .news_list li a:before{
+            content: ". ";
+        }
+        .news_list li a:hover{
+            color: #f00;
+        }
+        .news_list ul{
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+            height: 238px;
+            width: 560px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">013-特征布局-新闻列表</h2>
+    <div class="news_list">
+        <h3><span>新闻列表</span></h3>
+        <ul>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+        </ul>
+    </div>
+</body>
+</html>

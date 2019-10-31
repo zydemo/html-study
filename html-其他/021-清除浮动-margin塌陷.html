@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>021-清除浮动-margin塌陷</title>
+    <style>
+        .con,.con2{
+            width: 280px;
+            /*height: 210px;*/
+            border:1px solid #000;
+            margin: 40px auto 0;
+            font-size: 0;
+        }
+        .con a{
+            background-color: #55a8ea;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+        }
+        .con2{
+            /*清除浮动①：父级上增加属性overflow：hidden*/
+            /*overflow: hidden;*/
+        }
+        .con2 a{
+            background-color: #72eae5;
+            width: 50px;
+            height: 50px;
+            font-size: 16px;
+            margin: 10px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+        }
+        /*清除浮动和清除margin塌陷：使用成熟的清除样式类，clearfix*/
+        .clearfix:after,.clearfix:before{
+            content: "";
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .clearfix{
+            /*兼容IE*/
+            zoom: 1;
+        }
+
+        .box{
+            /*解决margin塌陷①：外部盒子设置一个边框*/
+            /*border: 1px solid #000;*/
+            background-color: #ff6600;
+            width: 200px;
+            height: 200px;
+            /*解决margin塌陷②：外部盒子设置 overflow:hidden*/
+            /*overflow: hidden;*/
+        }
+        .box2{
+            /*border: 1px solid #000;*/
+            background-color: #55a8ea;
+            width: 150px;
+            height: 100px;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .con3{
+            border: 1px solid #333;
+            width: 200px;
+            margin-top: 40px;
+
+        }
+        .con3 span{
+            background-color: #3c763d;
+            /*增加浮动后，父元素内整体浮动的元素无法撑开父元素，需要清除浮动：clearfix*/
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h3 align="center">021-清除浮动</h3>
+    <div class="con">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">7</a>
+        <a href="">8</a>
+        <a href="">8</a>
+        <a href="">8</a>
+        <a href="">8</a>
+        <a href="">8</a>
+    </div>
+    <!--清除浮动③，使用clearfix-->
+    <div class="con2 clearfix">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">7</a>
+        <a href="">8</a>
+        <a href="">8</a>
+        <a href="">8</a>
+        <a href="">8</a>
+        <a href="">8</a>
+        <!--清除浮动②：在最后一个子元素的后面加一个空的div，给它样式属性 clear:both-->
+        <!--<div style="clear: both;"></div>-->
+    </div>
+    <!--解决margin塌陷③：使用伪元素类clearfix-->
+    <div class="box clearfix">
+        <div class="box2">
+            margin塌陷解决
+        </div>
+    </div>
+    <!--增加浮动后，父元素内整体浮动的元素无法撑开父元素，需要清除浮动：clearfix-->
+    <div class="con3 clearfix">
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>浮动让行内元素span自动转化为行内块元素</span>
+    </div>
+</body>
+</html>

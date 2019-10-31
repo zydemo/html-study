@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>026-background背景属性</title>
+	<style type="text/css">
+		.backshow{
+			width: 304px;
+			height: 304px;
+			border: 3px solid #333;
+			float: left;
+			margin: 10px;
+		}		
+		.bg1{background: cyan url(images/002.png);}
+		.bg2{background: cyan url(images/002.png) repeat-x;}
+		.bg3{background: cyan url(images/002.png) repeat-y;}
+		.bg4{background: cyan url(images/002.png) no-repeat;}
+		.bg5{background: cyan url(images/002.png) no-repeat left center;}
+		.bg6{background: cyan url(images/002.png) no-repeat bottom right;}
+		.backshow2{
+			width: 100px;
+			height: 100px;
+			border: 2px solid #333;
+			float: left;
+			margin: 10px;
+		}
+		.bg7{background: cyan url(images/002.png) -15px -25px;}
+	</style>
+</head>
+<body>	
+	<h3 align="center">026-background背景属性</h3>
+	<div class="backshow bg1">默认平铺：repeat</div>
+	<div class="backshow bg2">repeat-x：横向重复平铺</div>
+	<div class="backshow bg3">repeat-y：纵向重复平铺</div>
+	<div class="backshow bg4">no-repeat：不平铺</div>
+	<div class="backshow bg5">不平铺，位于左中方向</div>
+	<div class="backshow bg6">不平铺，位于右下方向</div>
+	<br>
+	<div class="backshow2 bg7"></div>
+</body>
+</html>

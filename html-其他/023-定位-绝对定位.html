@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>023-定位-绝对定位</title>
+    <style>
+        .con{
+            width: 400px;
+            height: 400px;
+            margin: 40px auto;
+            border: 1px solid #333;
+            position: relative;
+        }
+        .con div{
+            background-color: #ff6600;
+            width: 250px;
+            height: 100px;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+        }
+        body .box01{
+            background-color: #3c763d;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h4>absolute 生成绝对定位元素，元素脱离文档流，不占据文档流的位置，可以理解为漂浮在文档流的上方，相对于上一个设置了相对或者绝对或者固定定位的父级元素来进行定位，如果找不到，则相对于body元素进行定位。</h4>
+    <div class="con">
+        <div class="box01">绝对定位,一般父级设置为相对定位</div>
+        <div class="box02">2</div>
+        <div class="box03">3</div>
+    </div>
+</body>
+</html>

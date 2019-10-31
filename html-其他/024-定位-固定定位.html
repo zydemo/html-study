@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>024-定位-固定定位</title>
+    <style>
+        .con{
+            width: 400px;
+            height: 400px;
+            margin: 40px auto;
+            border: 1px solid #333;
+        }
+        .con div{
+            width: 200px;
+            height: 100px;
+            background-color: #ff6600;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+        }
+        body .box01{
+            background-color: #3c763d;
+            position: fixed;
+            left: 0;
+            top: 40px;
+        }
+        .box04{
+            background-color: #00dc50;
+            /*绝对定位和固定定位的块元素和行内元素会自动转化为行内块元素*/
+            position: absolute;
+            left: 100px;
+            top: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h4>fixed 生成固定定位元素，元素脱离文档流，不占据文档流的位置，可以理解为漂浮在文档流的上方，相对于浏览器窗口进行定位。</h4>
+    <div class="con">
+        <div class="box01">固定定位</div>
+        <div class="box02">2</div>
+        <div class="box03">3</div>
+    </div>
+    <div class="box04">绝对定位和固定定位的块元素和行内元素会自动转化为行内块元素</div>
+</body>
+</html>

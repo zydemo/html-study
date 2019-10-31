@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>020-浮动-文字绕图效果</title>
+    <style>
+        .con{
+            border: 1px solid #000;
+            height: 300px;
+            width: 400px;
+            margin: 40px auto;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            /*background-color: #ff6600;*/
+            float: left;
+            margin: 0 10px 5px 0;
+            background: url("../images/061-3.jpg") no-repeat  -50px 0;
+        }
+        .box2{
+            width: 400px;
+            height: 260px;
+            background-color: #55a8ea;
+        }
+    </style>
+</head>
+<body>
+<h3 align="center">020-浮动-文字绕图效果</h3>
+    <div class="con">
+        <div class="box1" title="图片"></div>
+        <div class="box2">
+            浮动特性
+
+    1、浮动元素有左浮动(float:left)和右浮动(float:right)两种
+
+    2、浮动的元素会向左或向右浮动，碰到父元素边界、浮动元素、未浮动的元素才停下来
+
+    3、相邻浮动的块元素可以并在一行，超出父级宽度就换行
+
+    4、浮动让行内元素或块元素自动转化为行内块元素
+
+    5、浮动元素后面没有浮动的元素会占据浮动元素的位置，没有浮动的元素内的文字会避开浮动的元素，形成文字饶图的效果
+
+    6、父元素内整体浮动的元素无法撑开父元素，需要清除浮动
+
+    7、浮动元素之间没有垂直margin的合并
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>012-特征布局-导航条</title>
+    <style>
+        .menu{
+            list-style: none;
+            background-color: #55a8ea;
+            padding: 0;
+            margin: 50px auto 0;
+            width: 960px;
+            height: 40px;
+            position: relative;
+        }
+        .menu li{
+            float: left;
+            width: 100px;
+            height: 40px;
+            /*子元素a是内联元素，父元素可以用text-align属性设置子元素水平对齐方式，用line-height属性值设置垂直对齐方式*/
+            text-align: center;
+            line-height: 40px;
+        }
+        .menu li a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .active{
+            background-color: #00619f;
+        }
+        .menu li:hover{
+            background-color: #00619f;
+        }
+        .menu li a:hover{
+            color: #ff6600;
+        }
+        .menu .new{
+            background: url("images/new.png") no-repeat;
+            height: 20px;
+            width: 33px;
+            position: absolute;
+            left: 530px;
+            top: -10px;
+        }
+        .menu .new:hover{
+            background: url("images/new.png") no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">012-特征布局-导航条</h2>
+    <ul class="menu">
+        <li class="active"><a href="">首页</a></li>
+        <li><a href="">网站建设</a></li>
+        <li><a href="">公司简介</a></li>
+        <li><a href="">网络营销</a></li>
+        <li><a href="">案例展示</a></li>
+        <li><a href="">企业AI</a></li>
+        <li><a href="">联系我们</a></li>
+        <!-- 装饰性的用背景图，无需搜素引擎搜索到，内容性的产品图用img，搜索引擎可以搜素到-->
+        <li class="new"></li>
+    </ul>
+</body>
+</html>

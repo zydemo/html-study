@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>022-定位-相对定位</title>
+    <style>
+        .con{
+            border: 1px solid #333;
+            width: 200px;
+            height: 400px;
+            font-size: 0;
+            margin: 40px auto;
+        }
+        .con div{
+            background-color: #ff6600;
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 16px;
+        }
+        body .box01{
+            background-color: #3c763d;
+            position: relative;
+            /*设置偏移量*/
+            left: 20px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<h4>relative[ˈrelətɪv]相对定位元素，元素所占据的文档流的位置不变，元素本身相对文档流的位置进行偏移</h4>
+<div class="con">
+    <div class="box01">相对定位</div>
+    <div class="box02">2</div>
+    <div class="box03">3</div>
+</div>
+
+</body>
+</html>
