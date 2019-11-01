@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>025-定位-层级关系</title>
+    <title>024-定位-绝对定位</title>
     <style>
         .con{
             width: 400px;
@@ -18,29 +18,19 @@
             margin: 20px;
             text-align: center;
             line-height: 100px;
-            position: absolute;
         }
         body .box01{
             background-color: #3c763d;
-            z-index: 3;
-        }
-        body .box02{
-            background-color: #a94442;
-            left: 50px;
-            top: 80px;
-            z-index: 2;
-        }
-        body .box03{
+            position: absolute;
             left: 100px;
-            top: 160px;
-            z-index: 1;
+            top: 100px;
         }
     </style>
 </head>
 <body>
-    <h4>定位元素是浮动的正常的文档流之上的，可以用z-index属性来设置元素的层级</h4>
+    <h4>absolute 生成绝对定位元素，元素脱离文档流，不占据文档流的位置，可以理解为漂浮在文档流的上方，相对于上一个设置了相对或者绝对或者固定定位的父级元素来进行定位，如果找不到，则相对于body元素进行定位。</h4>
     <div class="con">
-        <div class="box01">1</div>
+        <div class="box01">绝对定位,一般父级设置为相对定位</div>
         <div class="box02">2</div>
         <div class="box03">3</div>
     </div>

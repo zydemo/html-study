@@ -2,8 +2,11 @@
 <html lang="zh-CN">
 <head>
 	<meta charset="utf-8">
-	<title>026-background背景属性</title>
+	<title>027-background背景属性</title>
 	<style type="text/css">
+		body{
+			height:2000px;
+		}
 		.backshow{
 			width: 304px;
 			height: 304px;
@@ -18,17 +21,18 @@
 		.bg5{background: cyan url(images/002.png) no-repeat left center;}
 		.bg6{background: cyan url(images/002.png) no-repeat bottom right;}
 		.backshow2{
-			width: 100px;
-			height: 100px;
+			width: 300px;
+			height: 300px;
 			border: 2px solid #333;
 			float: left;
 			margin: 10px;
 		}
-		.bg7{background: cyan url(images/002.png) -15px -25px;}
+		/*fixed背景图片随着页面滚动条滚动*/
+		.bg7{background: url(images/002.png) -15px -35px cyan fixed;}
 	</style>
 </head>
 <body>	
-	<h3 align="center">026-background背景属性</h3>
+	<h3 align="center">027-background背景属性</h3>
 	<div class="backshow bg1">默认平铺：repeat</div>
 	<div class="backshow bg2">repeat-x：横向重复平铺</div>
 	<div class="backshow bg3">repeat-y：纵向重复平铺</div>
@@ -36,6 +40,6 @@
 	<div class="backshow bg5">不平铺，位于左中方向</div>
 	<div class="backshow bg6">不平铺，位于右下方向</div>
 	<br>
-	<div class="backshow2 bg7"></div>
+	<div class="backshow2 bg7">设置偏移量,background-attachment:背景图片随着页面滚动条滚动</div>
 </body>
 </html>
