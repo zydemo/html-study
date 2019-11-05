@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <title>014-特征布局-图片列表</title>
     <style>
+        .clearfix:after,.clearfix:before{
+            content: '';
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .clearfix{
+            zoom: 1;
+        }
         .pic_list{
             width: 958px;
-            height: 458px;
             border: 1px solid #000;
             margin: 50px auto 0;
+            overflow: hidden;
         }
         .pic_list h3{
             border-bottom: 1px solid #ddd;
@@ -24,9 +34,10 @@
             padding: 0 15px;
         }
         .pic_list ul{
+            width: 950px;
             list-style: none;
             padding: 0;
-            margin: 20px 20px 38px;
+            margin: 20px 29px 13px 20px;
         }
         .pic_list li{
             float: left;
@@ -36,26 +47,24 @@
         .pic_list li a:hover{
             opacity: 0.5;
         }
-        .pic_list .pic5,.pic_list .pic11{
-            margin: 0 0 25px;
-        }
     </style>
 </head>
 <body>
     <h3 align="center">014-特征布局-图片列表</h3>
     <div class="pic_list">
         <h3><span>图片展示</span></h3>
-        <ul>
+        <!--父元素内整体浮动的元素无法撑开父元素，需要清除浮动-->
+        <ul class="clearfix">
             <li><a href=""><img src="images/014.jpg" alt=""></a></li>
             <li><a href=""><img src="images/014.jpg" alt=""></a></li>
             <li><a href=""><img src="images/014.jpg" alt=""></a></li>
             <li><a href=""><img src="images/014.jpg" alt=""></a></li>
-            <li class="pic5"><a href=""><img src="images/014.jpg" alt=""></a></li>
             <li><a href=""><img src="images/014.jpg" alt=""></a></li>
             <li><a href=""><img src="images/014.jpg" alt=""></a></li>
             <li><a href=""><img src="images/014.jpg" alt=""></a></li>
             <li><a href=""><img src="images/014.jpg" alt=""></a></li>
-            <li class="pic11"><a href=""><img src="images/014.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/014.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/014.jpg" alt=""></a></li>
         </ul>
     </div>
 
