@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>015-特征布局-新闻列表+背景图</title>
+    <style>
+        .news_list{
+            width: 600px;
+            border: 1px solid #ddd;
+            margin: 50px auto 0;
+        }
+        .news_list h3{
+            border-bottom: 1px solid #ddd;
+            margin: 0 auto;
+            height: 49px;
+            width: 560px;
+        }
+        .news_list h3 span{
+            border-bottom: 2px solid red;
+            height: 48px;
+            line-height: 48px;
+            padding: 0 15px;
+            float: left;
+            position: relative;
+        }
+        .news_list h3 a{
+            float: right;
+            text-decoration: none;
+            color: #666;
+            font: 15px/15px 'Microsoft Yahei';
+            margin-top: 25px;
+        }
+        .news_list h3 a:hover{
+            color: red;
+        }
+        .news_list ul{
+            width: 560px;
+            height: 238px;
+            list-style: none;
+            padding: 0;
+            margin: 10px auto 0;
+            overflow: hidden;
+        }
+        .news_list ul li{
+            border-bottom: 1px solid #ddd;
+            height: 39px;
+            background: url("images/015icon-blue.png")7px center no-repeat;
+        }
+        .news_list ul li:hover{
+            background: url("images/015icon-red.png")7px center no-repeat;
+        }
+        .news_list li a{
+            text-decoration: none;
+            color: #000;
+            height: 38px;
+            line-height: 38px;
+            float: left;
+            text-indent: 40px;
+            background: url("images/015dot.gif")left center no-repeat;
+        }
+        .news_list li a:hover{
+            color: #f00;
+        }
+        .news_list li span{
+            float: right;
+            height: 38px;
+            line-height: 38px;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">015-特征布局-新闻列表+背景图</h2>
+    <div class="news_list">
+        <h3>
+            <span>新闻列表</span>
+            <a href="#">查看更多&gt;&gt;</a>
+        </h3>
+        <ul>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+            <li><a href="">特征布局：新闻列表（所需知识点：盒模型、浮动）</a><span>2019-10-30</span></li>
+        </ul>
+    </div>
+</body>
+</html>
