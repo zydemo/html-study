@@ -11,7 +11,41 @@
         .btn-group .btn{
             margin-left: 9px !important;
         }
+        .qr_btn{
+            margin: 20px 0;
+            text-align: center;
+        }
+        .qr_btn a{
+            border-radius: 100px;
+            margin: 0 10px;
+            width: 20%;
+        }
+        .qr_box{
+            display: none;
+            text-align: center;
+        }
     </style>
+
+    <script>
+        $(function(){
+            // 获取当前页面链接地址
+            $url = window.location.href;
+            $url_before = 'https://api.cnzknet.com/qr/?m=1&e=M&p=8&url=';
+            $('#qr_img').attr("src",$url_before+$url);
+            $('#qr_btn').click(function(){
+                $qr_box = $('#qr_box');
+                /*这个判断的意义是,如果qr-box是隐藏的,那么让它显示出来,如果是显示的,那么就隐藏它*/
+                if($qr_box.is(':hidden'))
+                {
+                  $qr_box.slideDown('slow');
+                  // $(this).text('收起');
+                }else{
+                  $qr_box.slideUp('slow');
+                  // $(this).text('展开');
+                    }
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="container">
@@ -66,6 +100,17 @@
         <a href="#" class="btn btn-success">»</a>
         <a href="#" class="btn btn-info">末页</a>
     </div>
+</div>
+
+<br>
+<br>
+
+<div class="qr_btn">
+    <a class="btn btn-primary btn-lg" href="/">返回首页</a>
+    <a class="btn btn-primary btn-lg" id='qr_btn'>本页链接二维码</a>
+</div>
+<div id='qr_box' class="qr_box">
+    <img id='qr_img' src="" width="150" height="150" alt="本页链接二维码">
 </div>
 </body>
 </html>
