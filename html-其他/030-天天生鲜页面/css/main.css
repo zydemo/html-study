@@ -79,11 +79,15 @@ body{
     display: block;
     font-size: 14px;
     color: #37ab40;
-    text-indent: 50px;
-    background: url(../images/icons.png)10px -300px no-repeat;
+    text-indent: 55px;
+    background: #f7f7f7 url(../images/icons.png)10px -300px no-repeat;
     line-height: 38px;
     width: 158px;
     height: 38px;
+}
+.guest_cart .cart_name:hover{
+	opacity: 0.8;
+	color: #f80;
 }
 .guest_cart .goods_count{
     width: 40px;
