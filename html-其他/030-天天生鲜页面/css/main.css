@@ -216,6 +216,8 @@ body{
     position: absolute;
     text-align: center;
     top: 250px;
+	/*有间隙需要去掉*/
+	font-size: 0;
 }
 .slide .points li{
     width: 10px;
