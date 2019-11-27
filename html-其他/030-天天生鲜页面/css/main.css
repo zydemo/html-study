@@ -222,7 +222,7 @@ body{
 .slide .points li{
     width: 10px;
     height: 10px;
-    border-radius: 100px;
+    border-radius: 50%;
     display: inline-block;
     background-color: #9f9f9f;
     cursor: pointer;
@@ -234,18 +234,106 @@ body{
 .center_con .adv{
     width: 240px;
     height: 270px;
-    overflow: hidden;
 }
 .center_con .adv a{
     float: left;
     width: 240px;
     height: 135px;
 }
-.center_con .adv a:hover{
-    opacity: 0.7;
+/*解决部分浏览器图片下方出现3像素空白的bug*/
+.adv a img{
+    display: block;
 }
-
-
+.center_con .adv a:hover{
+    opacity: 0.8;
+}
+/*商品列表处*/
+.list_model{
+    width: 1200px;
+    height: 340px;
+    margin: 15px auto 0;
+}
+.list_model .list_title{
+    height: 38px;
+    border-bottom: 2px solid #37ab40;
+}
+.list_title h3{
+    color: #37ab40;
+    height: 38px;
+    font: bold 16px/38px 'Microsoft Yahei';
+}
+.list_title .subtitle{
+    height: 20px;
+    line-height: 20px;
+    margin-top: 15px;
+}
+.subtitle span{
+    color: #666;
+    margin: 0 10px 0 20px;
+}
+.subtitle a{
+    margin: 0 5px;
+    color: #666;
+}
+.subtitle a:hover,.list_title .goods_more:hover{
+    color: #f80;
+}
+.goods_more{
+    height: 20px;
+    margin-top: 15px;
+    color: #666;
+}
+.goods_con{
+    height: 300px;
+}
+.goods_con .goods_banner{
+    width: 200px;
+    height: 300px;
+}
+.goods_list{
+    width: 1000px;
+    height: 300px;
+    border-bottom: 1px solid #ededed;
+}
+.goods_list li{
+    width: 249px;
+    height: 299px;
+    border-right: 1px solid #ededed;
+    float: left;
+}
+.goods_list h4{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    margin: 20px auto 0;
+}
+.goods_list h4 a{
+    color: #666;
+    font-size: 15px;
+}
+.goods_list h4 a:hover{
+    color: #f80;
+}
+.goods_list li img{
+    width: 180px;
+    height: 180px;
+    display: block;
+    margin: 0 auto;
+}
+.goods_list .prize{
+    text-align: center;
+    font-size: 20px;
+    color: #c40000;
+    margin-top: 5px;
+}
+.goods_list li:hover{
+    width: 248px;
+    height: 299px;
+    border: 1px solid #f80;
+}
+.goods_list li:hover img{
+    opacity: 0.8;
+}
 
 
 
