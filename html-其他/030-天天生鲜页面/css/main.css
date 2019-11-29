@@ -88,6 +88,7 @@ body{
 .guest_cart .cart_name:hover{
 	opacity: 0.8;
 	color: #f80;
+    background: #f7f7f7 url(../images/icons.png)10px -460px no-repeat;
 }
 .guest_cart .goods_count{
     width: 40px;
@@ -292,7 +293,7 @@ body{
 }
 .goods_list{
     width: 1000px;
-    height: 300px;
+    height: 299px;
     border-bottom: 1px solid #ededed;
 }
 .goods_list li{
@@ -320,7 +321,7 @@ body{
     display: block;
     margin: 0 auto;
 }
-.goods_list .prize{
+.goods_list .price{
     text-align: center;
     font-size: 20px;
     color: #c40000;
@@ -334,6 +335,24 @@ body{
 .goods_list li:hover img{
     opacity: 0.8;
 }
-
-
-
+.footer{
+    border-top: 2px solid #42ad46;
+    margin: 30px 0;
+}
+.footer .foot_link{
+    text-align: center;
+    margin-top: 30px;
+}
+.foot_link a,.foot_link span{
+    color: #4e4e4e;
+}
+.foot_link a:hover{
+    color: #f80;
+}
+.foot_link span{
+    margin: 0 10px;
+}
+.footer p{
+    text-align: center;
+    margin-top: 10px;
+}
