@@ -356,3 +356,6 @@ body{
     text-align: center;
     margin-top: 10px;
 }
+.no-mp{
+    margin-top: 0;
+}

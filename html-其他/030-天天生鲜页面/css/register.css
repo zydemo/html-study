@@ -1,0 +1,12 @@
+/*通过 :root 伪类定义全局css变量*/
+:root{
+    --绿色: #518e17;
+    --白色: #fff;
+}
+body{
+    font-size: 12px;
+    color: #666;
+}
+div{
+    background-color:var(--绿色);
+}
