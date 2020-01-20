@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>031-transform元素旋转</title>
+    <style>
+        .box1,.box2,.box3,.box4,.box5,.box6,.box7{
+            width: 100px;
+            height: 100px;
+            line-height: 25px;
+            margin:30px auto;
+            background-color: #55a8ea;
+            transition: all 500ms ease;
+        }
+        .box1:hover{
+            /*沿Z轴旋转*/
+            transform:rotate(90deg);
+        }
+        .box2{
+            transform:perspective(800px) rotateX(0deg); /* 初始值防止跳变bug*/
+            transform-style: preserve-3d;/*设置盒子是否按3d空间显示*/
+        }
+        .box2:hover{
+            /*沿X轴旋转,perspective 设置透视距离*/
+            transform:perspective(800px) rotateX(45deg);
+        }
+
+        .align-center-vertical{
+            display: flex; /*转换为弹性盒模型*/
+            align-items: center; /* 居中对齐弹性盒的各项 */
+            justify-content: space-around;/*项目位于各行之前、之间、之后都留有空白的容器内。*/
+            flex-direction: column;/*弹性盒元素的方向为垂直显示*/
+            text-align: center;
+        }
+        .box3:hover{
+            transform: scale(0.8);
+            background-color: #3453cc;
+            color: #d733e8;
+        }
+        .box4:hover{
+            transform: translate(20px,10px);
+        }
+        .box5:hover{
+            transform: skew(45deg);
+        }
+       .con:hover .box6{
+            /*沿盒子左上角旋转90度*/
+            transform:rotate(90deg); /*设置变形的中心点*/
+            transform-origin: left top;
+        }
+        .con{
+            width: 500px;
+            border: 1px solid #0a0a0a;
+            margin: 0 auto;
+        }
+        .box7{
+            font-size: 20px;
+            transform-style: preserve-3d;
+            transform: perspective(800px) rotateY(0deg);
+            /*backface-visibility 设置盒子背面是否可见*/
+            backface-visibility: hidden;
+        }
+        .con:hover .box7{
+            transform: rotateY(180deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1 align-center-vertical">box1-沿Z轴旋转-rotate</div>
+    <div class="box2 align-center-vertical">box2-沿X轴旋转-rotateX</div>
+    <div class="box3 align-center-vertical">box3-缩放80%-scale</div>
+    <div class="box4 align-center-vertical">box4位移-translate</div>
+    <div class="box5 align-center-vertical">box5斜切-skew</div>
+    <!--<div class="box6 align-center-vertical">box6-沿盒子左上角旋转90度</div>-->
+    <div class="con">
+        <div class="box6 align-center-vertical">box6-沿盒子左上角旋转90度</div>
+        <div class="box7 align-center-vertical">box7-Y轴旋转盒子背面不可见</div>
+    </div>
+</body>
+</html>
