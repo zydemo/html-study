@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>032-transform图片旋转</title>
+    <style>
+        .box{
+            width: 363px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 50px auto 0;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(800px) rotateY(0deg);
+        }
+        .pic,.back_info{
+            width: 363px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 500ms ease;
+            backface-visibility: hidden;
+            transform: perspective(800px) rotateY(0deg);
+        }
+        .back_info{
+            line-height: 30px;
+            text-indent: 24px;
+            background-color: #ff6600;
+            transform: translateZ(10px) rotateY(180deg);
+        }
+        .box:hover .pic{
+            transform: perspective(800px) rotateY(180deg);
+        }
+        .box:hover .back_info{
+            transform: perspective(800px) rotateY(0deg);
+        }
+        /*文字居中*/
+        .align-center-vertical{
+            display: flex; /*转换为弹性盒模型*/
+            align-items: center; /* 居中对齐弹性盒的各项 */
+            justify-content: space-around;/*项目位于各行之前、之间、之后都留有空白的容器内。*/
+            flex-direction: column;/*弹性盒元素的方向为垂直显示*/
+            /*text-align: center;*/
+        }
+    </style>
+</head>
+<body>
+    <h3 align="center">CSS3 transform图片旋转</h3>
+    <div class="box">
+        <div class="pic"><img src="../images/073-1.jpg" alt=""></div>
+        <div class="back_info align-center-vertical">《沁园春·雪》是无产阶级革命家毛泽东创作的一首词。该词上片描写北国壮丽的雪景，纵横千万里，展示了大气磅礴、旷达豪迈的意境，抒发了词人对祖国壮丽河山的热爱。下片议论抒情，重点评论历史人物，歌颂当代英雄，抒发无产阶级要做世界的真正主人的豪情壮志。全词熔写景、议论和抒情于一炉，意境壮美，气势恢宏，感情奔放，胸襟豪迈，颇能代表毛泽东诗词的豪放风格。</div>
+    </div>
+</body>
+</html>

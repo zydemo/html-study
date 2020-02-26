@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>034-animation人物走路动画</title>
+    <style>
+        .box{
+            width: 120px;
+            height: 182px;
+            border: 1px solid #000;
+            margin: 50px auto 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .box img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: moving 1s steps(8) infinite;
+        }
+        @keyframes moving {
+            0%{
+                left: 0;
+            }
+            100%{
+                left: -960px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h3 align="center">034-animation人物走路动画</h3>
+
+    <div class="box">
+        <img src="../images/walking.png" alt="">
+    </div>
+</body>
+</html>

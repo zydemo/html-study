@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>033-animation动画</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #ff6600;
+            /*动画名称、时间、曲线、延迟时间、动画播放次数、*/
+            animation:moving 1s ease 0s 5;
+            /*动画结束后返回*/
+            animation-direction: alternate;
+            /*动画状态*/
+            animation-play-state: paused;
+            /*动画前后的状态:forwards当动画完成后，保持最后一个属性值*/
+            animation-fill-mode: forwards;
+        }
+        .box:hover{
+            animation-play-state: running;
+        }
+        @keyframes moving {
+            from{
+                width: 100px;
+            }
+            to{
+                width: 500px;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <h3 align="center">033-animation动画</h3>
+    <div class="box"></div>
+
+</body>
+</html>
