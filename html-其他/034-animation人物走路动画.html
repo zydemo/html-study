@@ -16,14 +16,23 @@
             position: absolute;
             left: 0;
             top: 0;
-            animation: moving 1s steps(8) infinite;
+            animation: moving 1s steps(8) infinite both;
         }
         @keyframes moving {
             0%{
                 left: 0;
+                background-color: #ff6600;
+            }
+            50%{
+                top:10px;
+            }
+            75%{
+                top:-10px;
+                border-radius: 50px;
             }
             100%{
                 left: -960px;
+                background-color: #55a8ea;
             }
         }
     </style>
@@ -32,7 +41,7 @@
     <h3 align="center">034-animation人物走路动画</h3>
 
     <div class="box">
-        <img src="../images/walking.png" alt="">
+        <img src="../images/walking2.png" alt="">
     </div>
 </body>
 </html>
