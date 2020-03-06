@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>036-HTML5 新增表单控件</title>
+</head>
+<body>
+    <h3 align="center">036-HTML5 新增表单控件</h3>
+    <form>
+        <!--autofocus 自动获得焦点-->
+        <label>网址:</label><input type="url" name="" required placeholder="请输入网址" autofocus><br><br>
+        <label for="email">邮箱:</label><input type="email" name="email" id="email" required><br><br>
+        <label>日期:<input type="date" name=""></label><br><br>
+        <label for="time">时间:</label><input type="time" name="" id="time"><br><br>
+        <label for="week">星期:</label><input type="week" name="" id="week"><br><br>
+        <label for="number">数量:</label><input type="number" name="" id="number"> <br><br>
+        <label for="range">范围:</label><input type="range" name="" id="range"><br><br>
+        <label for="tel">电话:</label><input type="tel" name="" id="tel"><br><br>
+        <label for="color">颜色:</label><input type="color" name="" id="color"><br><br>
+        <!--autocomplete 联想关键词，一般设置成off-->
+        <label for="search">搜索:</label><input type="search" name="" autocomplete="off" id="search"><br><br>
+        <input type="submit" value="提交">
+    </form>
+
+    <audio autoplay controls loop preload>
+<!-- source标签的作用是提供多个媒体文件地址，如果一个地址的文件不兼容，就使用下一个地址。 -->
+        <source src="../source/Maid with the Flaxen Hair.mp3">
+        <source src="../source/Sleep Away.mp3">
+    </audio>
+    <!-- 和上面效果一样 不自动播放-->
+    <audio src="../source/Sleep Away.mp3" controls loop preload></audio>
+
+
+</body>
+</html>

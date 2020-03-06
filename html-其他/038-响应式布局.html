@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>038-响应式布局</title>
+    <style>
+        body,ul{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .clearfix:after,.clearfix:before{
+            content: "";display: table;
+        }
+        .clearfix:after{
+            clear:both;
+        }
+        .clearfix{zoom:1;}
+        .con{
+            border: 1px solid #000;
+            /*overflow: hidden;*/
+        }
+        .con li{
+            background-color: #ff6600;
+            width: 23%;
+            height: 200px;
+            margin: 30px 1%;
+            float: left;
+            text-align: center;
+            line-height: 200px;
+        }
+        @media (max-width: 750px) {
+            .con li{
+                width: 46%;
+                margin: 30px 2%;
+            }
+        }
+        @media (max-width: 500px) {
+            .con li{
+                width: 90%;
+                margin: 30px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h3 align="center">038-响应式布局</h3>
+    <ul class="con clearfix">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+</html>

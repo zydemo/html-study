@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>037-流体布局</title>
+    <style>
+        body,ul{
+            margin:0;
+            padding: 0;
+        }
+        .menu{
+            height: 50px;
+            list-style: none;
+        }
+        .menu li{
+            background-color: #ff6600;
+            float: left;
+            height: 50px;
+            border: 1px solid #000;
+            /*加了boorder宽度超过盒子宽度会导致换行的解决方法一*/
+            /*width: calc(25% - 4px);*/
+
+            /*解决方法二*/
+            width: 25%;
+            /*设置盒子的尺寸计算方式为从边框开始，盒子的尺寸，边框和内填充算在盒子尺寸内*/
+            box-sizing: border-box;
+
+            text-align: center;
+            /*margin-right: -2px;*/
+            line-height: 50px;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+
+        }
+    </style>
+</head>
+<body>
+<ul class="menu">
+    <li><a href="">菜单文字</a></li>
+    <li><a href="">菜单文字</a></li>
+    <li><a href="">菜单文字</a></li>
+    <li><a href="">菜单文字</a></li>
+</ul>
+
+
+</body>
+</html>

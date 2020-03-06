@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>035-loading加载动画</title>
+    <script src="../js/html5.js"></script>
+    <style>
+        .box{
+            width: 300px;
+            height: 120px;
+            border: 1px solid #000;
+            margin: 50px auto 0;
+        }
+        .box div{
+            width: 30px;
+            height: 70px;
+            background-color: #ff6600;
+            float: left;
+            margin: 15px 15px 10px;
+            border-radius: 10px;
+        }
+
+        .box div:nth-child(1){
+            background-color: #55a8ea;
+            animation:loading 500ms ease 0s infinite alternate;
+        }
+        .box div:nth-child(2){
+            background-color: #eae04b;
+            animation:loading 500ms ease 100ms infinite alternate;
+        }
+        .box div:nth-child(3){
+            background-color: #ea6bda;
+            animation:loading 500ms ease 200ms infinite alternate;
+        }
+        .box div:nth-child(4){
+            background-color: #31ea28;
+            animation:loading 500ms ease 300ms infinite alternate;
+        }
+        .box div:nth-child(5){
+            background-color: #ea2392;
+            animation:loading 500ms ease 400ms infinite alternate;
+        }
+
+        @keyframes loading {
+            from{
+                transform: scaleY(1);
+                opacity: 0.5;
+            }
+            to{
+                transform: scaleY(0.5);
+                opacity: 1;
+            }
+        }
+
+        .box p{
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <h3 align="center">035-loading加载动画</h3>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <p>加载中...</p>
+    </div>
+</body>
+</html>
