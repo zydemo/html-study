@@ -100,6 +100,104 @@
 .center_wrap .menu li:nth-child(8) a{
      background-position: left -24rem;
 }
+.center_wrap .common_model{
+    background-color: #fff;
+    margin: 0.5rem 0;
+}
+.center_wrap .common_title{
+    height: 0.9rem;
+    width: 17.75rem;
+    margin: 0.8rem auto 0;
+}
+.center_wrap .common_title h3{
+    border-left: 0.25rem solid #51d16c;
+    font:bold 0.75rem/0.9rem 'Microsoft Yahei';
+    color: #51d16c;
+    text-indent: 0.4rem;
+}
+.center_wrap .common_title a{
+    font:bold 0.6rem/0.9rem 'Microsoft Yahei';
+    color: #6b6969;
+}
+.center_wrap .banner{
+    width: 17.75rem;
+    height: 4.5rem;
+    margin: 0.5rem auto 0;
+}
+.center_wrap .banner img{
+    width: 100%;
+}
+
+.goods_list{
+    width: 17.75rem;
+    height: 9.35rem;
+    margin: 0.5rem auto 0.7rem;
+}
+.goods_list li{
+    float: left;
+    width: 5.8rem;
+    height: 9.35rem;
+    border-right: 1px solid #51d16c;
+    position: relative;
+}
+.goods_list li:last-child{
+    border-right:none;
+}
+.goods_list li .goods_pic{
+    display: block;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0.5rem auto 0;
+}
+.goods_list li .goods_pic img{
+    width: 100%;
+}
+.goods_list li .goods_name{
+    font:0.75rem/0.75rem 'Microsoft Yahei';
+    /*固定宽度*/
+    width: 5rem;
+    /*超出隐藏*/
+    overflow: hidden;
+    /*禁止换行*/
+    white-space: nowrap;
+    /*超出用省略号代替*/
+    text-overflow: ellipsis;
+    color: #666;
+    margin: 0.75rem auto 0;
+}
+.goods_list li .goods_unit{
+    color: #bbb;
+    font:0.75rem/0.75rem 'Microsoft Yahei';
+    width: 5rem;
+    margin: 0.8rem auto 0;
+}
+.goods_list li .goods_price{
+    color: #f40;
+    font:12px/12px 'Microsoft Yahei';
+    width: 5rem;
+    margin: 0.5rem auto 0;
+}
+.goods_list li .add_chart{
+    position: absolute;
+    width: 1.7rem;
+    height: 1.7rem;
+    right: 0.675rem;
+    bottom: 0;
+    background: url("../images/icons.png")left -27rem no-repeat;
+    background-size: 3rem 42rem;
+}
+
+@media (min-width: 375px) {
+    .goods_list li .goods_price{
+        font: 14px/14px 'Microsoft Yahei';
+    }
+}
+@media (min-width: 640px) {
+    .goods_list li .goods_price{
+        font: 20px/20px 'Microsoft Yahei';
+    }
+}
+
 .footer{
     position: absolute;
     width: 100%;
@@ -107,5 +205,38 @@
     background-color: #fff;
     left: 0;
     bottom:0;
+}
+.footer li{
+    width: 25%;
+    height: 2.5rem;
+    float: left;
+}
+.footer li a{
+    display: block;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 0.25rem auto 0;
+    background: url("../images/icons.png")left -30rem no-repeat;
+    background-size: 3rem 42rem;
+}
+.footer li:nth-child(2) a{
+    background-position: left -33rem;
+}
+.footer li:nth-child(3) a{
+    background-position: left -36rem;
+}
+.footer li:nth-child(4) a{
+    background-position: left -39rem;
+}
+.footer li h4{
+    color: #666;
+    font: 12px/12px 'Microsoft Yahei';
+    text-align: center;
+    margin-top: 0.2rem;
+}
 
+@media (min-width: 640px) {
+    .footer li h4{
+        font: 20px/20px 'Microsoft Yahei';
+    }
 }
