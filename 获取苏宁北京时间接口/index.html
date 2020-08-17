@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>075-ajax_test</title>
+    <style>
+        #settime{
+            color: #ff6600;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        function nowtime(){
+            var userurl = 'http://quan.suning.com/getSysTime.do';
+            var $settime = document.getElementById('settime');
+            var now = new Date();
+            var week = getdate(now);
+            $.ajax({
+                type: 'get',
+                url: userurl,
+                dataType: 'json',
+                success: function(data){
+                    $settime.innerHTML = "现在时间是：" + data.sysTime2.replace(/(\d{4}).(\d{1,2}).(\d{1,2})/g, '$1年$2月$3日')+ "，" +toweek(week[0]);
+                }
+            });
+        }
+        nowtime();
+        setInterval('nowtime()',1000);
+        function getdate(ev) {
+                    var week = ev.getDay(); //星期（值0-6）
+                    return [week];
+                }
+         function toweek(num) {
+            switch(num){
+                case 0:
+                    return '星期天';
+                case 1:
+                    return '星期一';
+                case 2:
+                    return '星期二';
+                case 3:
+                    return '星期三';
+                case 4:
+                    return '星期四';
+                case 5:
+                    return '星期五';
+                case 6:
+                    return '星期六';
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div id="settime"></div>
+<p id="times"></p>
+</body>
+</html>
